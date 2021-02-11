@@ -15,9 +15,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float horiz = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
-
-        Debug.Log(horiz);
+        float vert = Input.GetAxis("Vertical");;
 
         if (horiz > 0.1f || horiz < -0.1f)
         {
