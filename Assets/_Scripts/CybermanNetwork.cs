@@ -38,7 +38,6 @@ public class CybermanNetwork : MonoBehaviour
     private void FindActiveCybermen()
     {
         currentCybermen.Clear();
-        currentCybermen.AddRange(FindObjectsOfType<CybermenController>());
         foreach (var item in currentCybermen)
         {
             Debug.Log("Fuck");
