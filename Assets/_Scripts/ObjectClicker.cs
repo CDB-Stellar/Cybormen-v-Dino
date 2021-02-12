@@ -16,7 +16,6 @@ public class ObjectClicker : MonoBehaviour
                 if (hit.transform)
                 {
                     PrintName(hit.transform.gameObject);
-                    CybermanNetwork.current.AddTask();
                 }
             } 
         }

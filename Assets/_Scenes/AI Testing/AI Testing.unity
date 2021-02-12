@@ -262,6 +262,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1140918104, guid: c8e2ce59362c2984cb69d3918e9bce6b, type: 3}
+      propertyPath: targetPriority.Array.data[2]
+      value: Cyberman
+      objectReference: {fileID: 0}
     - target: {fileID: 234676226681545497, guid: c8e2ce59362c2984cb69d3918e9bce6b, type: 3}
       propertyPath: m_Name
       value: Tyrannosaurus
@@ -1028,10 +1032,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029005694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc1fc9eda7dccc4090ada2824767d8e, type: 3}
+  m_Script: {fileID: 11500000, guid: b53705b6132f8b04a8f3ebea47fe416b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCybermen: []
 --- !u!33 &1029005696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2248,7 +2251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2878156549700147587, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_TagString
-      value: Caveman
+      value: Cyberman
       objectReference: {fileID: 0}
     - target: {fileID: 3223051823533720377, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_RootOrder
@@ -2323,6 +2326,18 @@ NavMeshAgent:
   m_BaseOffset: 0.9127932
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2012467103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012467098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25908cdd340bb4b40a228e8931b84496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2020170447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
