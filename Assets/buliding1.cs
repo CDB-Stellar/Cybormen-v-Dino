@@ -20,7 +20,7 @@ public class buliding1 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            TakeDamage(20);
+            TakeDamage(5);
         }
     }
 
