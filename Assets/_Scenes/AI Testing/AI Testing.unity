@@ -529,6 +529,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86c1a24aac5b53e49815139dc7e7b4d7, type: 3}
   m_PrefabInstance: {fileID: 469841469}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &469841475
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469841470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.903263
+  m_Height: 2.56
+  m_Direction: 1
+  m_Center: {x: 0.019807935, y: 0.110000014, z: 0.056227088}
 --- !u!4 &521122029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5937958276999474881, guid: 1e3359bfce726f84ea2f65e9e8228a15, type: 3}
@@ -1112,8 +1126,9 @@ GameObject:
   - component: {fileID: 1029005697}
   - component: {fileID: 1029005696}
   - component: {fileID: 1029005695}
+  - component: {fileID: 1029005699}
   m_Layer: 0
-  m_Name: CybermenNetwork
+  m_Name: CybermenCommander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,9 +1143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029005694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53705b6132f8b04a8f3ebea47fe416b, type: 3}
+  m_Script: {fileID: 11500000, guid: 05cfddd708bc6774f93dfe0399b72f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCybermen: []
 --- !u!33 &1029005696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1188,12 +1204,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029005694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 36.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029005699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029005694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435796204aaaad14abd5c12abb6fda4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049084423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickableMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &1410088940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1420039533}
+  - component: {fileID: 1420039532}
   m_Layer: 0
   m_Name: Village
   m_TagString: Untagged
@@ -1875,6 +1904,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1420039532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420039531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619ddf99cb88a314e83d1aaf20c90ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
 --- !u!4 &1420039533
 Transform:
   m_ObjectHideFlags: 0
@@ -2094,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 710388ac58153604dab3e0a948c6543d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 710388ac58153604dab3e0a948c6543d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2355,7 +2397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3223051823533720377, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.77
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 3223051823533720377, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2363,7 +2405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3223051823533720377, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.95
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 3223051823533720377, guid: 85b7eb2e8f1fce24b9b49be7e2a09f10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2414,7 +2456,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2449,6 +2491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00074c199679a7f47ba1fed522a1d59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopDis: 1
 --- !u!4 &2020170447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}

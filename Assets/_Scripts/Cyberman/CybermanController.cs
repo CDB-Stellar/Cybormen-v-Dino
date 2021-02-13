@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class CybermanController : MonoBehaviour
 {
-    const float WORK_SPEED = 1f;
+    [SerializeField] private float stopDis;
+    public CybermanTask CurrentTask { get; private set; }    
+    
+    private const float WORK_SPEED = 1f;
 
-    Transform Village;
-    CybermanTask currentTask;
-    CybermanState currentState;
-    NavMeshAgent navAgent;
+    private Transform Village;
+    private CybermanState currentState;
+    private NavMeshAgent navAgent;
 
     float workTimer;
 
@@ -32,6 +34,7 @@ public class CybermanController : MonoBehaviour
     }    
     private void Update()
     {
+        Debug.Log(currentState.ToString());
         switch (currentState)
         {
             case CybermanState.Idle:
@@ -51,8 +54,8 @@ public class CybermanController : MonoBehaviour
     }
     private CybermanState MoveToTask()
     {
-        navAgent.SetDestination(currentTask.TaskLocation.position);
-        if (Vector3.Distance(navAgent.destination, transform.position) < 1f)
+        navAgent.SetDestination(CurrentTask.TaskLocation.position);
+        if (NavAgentArrived())
         {
             return CybermanState.DoingTask;
         }
@@ -64,7 +67,7 @@ public class CybermanController : MonoBehaviour
     private CybermanState DoTask()
     {
         workTimer += WORK_SPEED * Time.deltaTime;
-        if (currentTask.Work.DoWork(workTimer))
+        if (CurrentTask.Work.DoWork(workTimer))
         {
             workTimer = 0f;
             return CybermanState.MovingToVillage;
@@ -77,8 +80,9 @@ public class CybermanController : MonoBehaviour
     private CybermanState MoveToVillage()
     {
         navAgent.SetDestination(Village.position);
-        if (navAgent.pathStatus == 0)
+        if (NavAgentArrived())
         {
+            CurrentTask = null;
             return CybermanState.Idle;
         }
         else
@@ -86,11 +90,16 @@ public class CybermanController : MonoBehaviour
             return CybermanState.MovingToVillage;
         }
     }
+    private bool NavAgentArrived()
+    {
+        Debug.Log(Vector3.Distance(navAgent.destination, transform.position) + " < " + navAgent.stoppingDistance + " = " + (Vector3.Distance(navAgent.destination, transform.position) < navAgent.stoppingDistance));
+        return Vector3.Distance(navAgent.destination, transform.position) < navAgent.stoppingDistance;
+    }
     public void AssignTask(CybermanTask newTask)
     {
-        Debug.Log("Assigning Task");
-        currentTask = newTask;
+        CurrentTask = newTask;
         currentState = CybermanState.MovingToTask;
     }
+
 
 }

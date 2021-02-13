@@ -13,10 +13,9 @@ public class ObjectClicker : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100f, clickableMask))
             {
-                if (hit.transform)
-                {
-                    PrintName(hit.transform.gameObject);
-                }
+                Debug.Log("Adding Resource Task");
+                IWorkable resource = hit.collider.gameObject.GetComponent<IWorkable>();
+                CybermanEvents.current.EnqueueTask(new CybermanTask(hit.transform, resource));
             } 
         }
     }
