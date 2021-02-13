@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceNode : MonoBehaviour
+public class CybermanNetwork : MonoBehaviour
 {
-    public bool AssignedTask;
-    public 
     // Start is called before the first frame update
     void Start()
     {
