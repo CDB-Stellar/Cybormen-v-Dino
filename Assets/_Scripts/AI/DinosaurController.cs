@@ -9,24 +9,22 @@ public class DinosaurController : MonoBehaviour
     public List<string> targetPriority;
     public float stopDis;
 
-    public float maxHealth;
-    public float currentHealth;
-
-    private HealthBar healthBar;
     private NavMeshAgent navAgent;
     private TargetFinder targetFinder;
+    private ObjectHealth health;
     private Transform currentTarget;
     private DinosaurState currentState;
+  
     private enum DinosaurState
     {
         Attacking,
         Moving,
-        Dead,
     }
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
-        targetFinder = GetComponent<TargetFinder>();  
+        targetFinder = GetComponent<TargetFinder>();
+        health = GetComponent<ObjectHealth>();
     }
     void Start()
     {
@@ -43,16 +41,11 @@ public class DinosaurController : MonoBehaviour
             case DinosaurState.Moving:
                 currentState = Moving();
                 break;
-            case DinosaurState.Dead:
-                break;
             default:
                 break;
         }
     }
-    private DinosaurState Die()
-    {
-        return DinosaurState.Dead;
-    }
+    
     private void Attack()
     {
         /*TODO
@@ -68,7 +61,7 @@ public class DinosaurController : MonoBehaviour
     {
         currentTarget = DetermineTarget();
         navAgent.stoppingDistance = CalculateStoppingDistance();
-        navAgent.SetDestination(currentTarget.position);
+        navAgent.SetDestination(currentTarget.position);         
         return DinosaurState.Moving;
     }
     private Transform DetermineTarget()
