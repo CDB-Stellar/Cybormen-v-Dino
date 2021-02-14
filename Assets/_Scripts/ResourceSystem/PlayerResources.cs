@@ -13,11 +13,6 @@ public class PlayerResources : MonoBehaviour
     {
         GameEvents.current.OnIncrementResource += HarvestResources;
     }
-    private void Update()
-    {
-
-    }
-
     private void HarvestResources(ResourceType resource, float amount)
     {
         switch (resource)
