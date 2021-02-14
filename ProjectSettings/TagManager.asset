@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Caveman
   - Tower
-  - House
+  - Building
+  - Cyberman
+  - Village
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - UI
   - DinosaurTarget
   - Obstacle
-  - 
-  - 
+  - Factory
+  - Resource
   - 
   - 
   - 
