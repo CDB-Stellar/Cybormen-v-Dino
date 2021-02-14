@@ -448,7 +448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.33590698, y: 0.23760033}
+  m_AnchoredPosition: {x: 0.33590698, y: 0.23760223}
   m_SizeDelta: {x: -2.8153, y: -3.2909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881301004
@@ -566,6 +566,11 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbar: {fileID: 164230181}
+--- !u!4 &916415401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 710388ac58153604dab3e0a948c6543d, type: 3}
+  m_PrefabInstance: {fileID: 916415396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1922939488
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +585,7 @@ GameObject:
   - component: {fileID: 1922939489}
   - component: {fileID: 1922939493}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +630,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1922939491
 Canvas:
   m_ObjectHideFlags: 0
@@ -635,7 +640,7 @@ Canvas:
   m_GameObject: {fileID: 1922939488}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -654,19 +659,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922939488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 164230180}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 916415401}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.49, y: 2.3}
+  m_SizeDelta: {x: 267.9147, y: 67.5102}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922939493
 MonoBehaviour:
   m_ObjectHideFlags: 0
