@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00334ef1401cb304eae76f675120e49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cameraName: PlayCam
 --- !u!1 &6452645047912251840
 GameObject:
   m_ObjectHideFlags: 0

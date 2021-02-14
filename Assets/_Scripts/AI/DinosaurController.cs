@@ -8,6 +8,7 @@ public class DinosaurController : MonoBehaviour
     public Transform village;
     public List<string> targetPriority;
     public float stopDis;
+    public int damage;
 
     private NavMeshAgent navAgent;
     private TargetFinder targetFinder;
@@ -37,6 +38,7 @@ public class DinosaurController : MonoBehaviour
         switch (currentState)
         {
             case DinosaurState.Attacking:
+                currentState = Attack();
                 break;
             case DinosaurState.Moving:
                 currentState = Moving();
@@ -44,25 +46,33 @@ public class DinosaurController : MonoBehaviour
             default:
                 break;
         }
-    }
-    
-    private void Attack()
+    }   
+    private DinosaurState Attack()
     {
-        /*TODO
-         1. Attack target
-         2. Send signal to do damage to target
-         3. Check for higher priority target0
-        Also turn toward target
-
-        Make whole script responsable determining target
-         */       
+        if (currentTarget != null && NavAgentArrived() && !currentTarget.CompareTag("Village"))
+        {
+            currentTarget.GetComponent<ObjectHealth>().TakeDamage(damage);
+            return DinosaurState.Attacking;
+        }
+        else
+        {
+            return DinosaurState.Moving;
+        }
+        
     }
     private DinosaurState Moving()
     {
         currentTarget = DetermineTarget();
         navAgent.stoppingDistance = CalculateStoppingDistance();
-        navAgent.SetDestination(currentTarget.position);         
-        return DinosaurState.Moving;
+        navAgent.SetDestination(currentTarget.position);
+        if (NavAgentArrived())
+        {
+            return DinosaurState.Attacking;
+        }
+        else
+        {
+            return DinosaurState.Moving;
+        }    
     }
     private Transform DetermineTarget()
     {
@@ -75,7 +85,7 @@ public class DinosaurController : MonoBehaviour
             for (int k = 0; k < targetFinder.visableTargets.Count; k++)
             {
                 Transform potentialTarget = targetFinder.visableTargets[k];
-                if (potentialTarget.CompareTag(targetPriority[i]))
+                if (potentialTarget != null && potentialTarget.CompareTag(targetPriority[i]))
                 {
                     if (newTarget.CompareTag(potentialTarget.gameObject.tag))
                     { 
@@ -92,6 +102,17 @@ public class DinosaurController : MonoBehaviour
 
         Debug.Log("New Target: " + newTarget.name);
         return newTarget;
+    }
+    private bool NavAgentArrived()
+    {
+        if (navAgent.destination != null)
+        {
+            return Vector3.Distance(navAgent.destination, transform.position) < navAgent.stoppingDistance;
+        }
+        else
+        {
+            return false;
+        }
     }
     private float CalculateStoppingDistance()
     {
