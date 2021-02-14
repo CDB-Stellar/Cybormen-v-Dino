@@ -6,7 +6,7 @@ using System;
 public class CybermanEvents : MonoBehaviour
 {
     public static CybermanEvents current;
-    void Start()
+    void Awake()
     {
         current = this;
     }

@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Building
   - Cyberman
+  - Village
   layers:
   - Default
   - TransparentFX
