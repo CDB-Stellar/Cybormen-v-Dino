@@ -9,6 +9,10 @@ public class DinosaurController : MonoBehaviour
     public List<string> targetPriority;
     public float stopDis;
 
+    public float maxHealth;
+    public float currentHealth;
+
+    private HealthBar healthBar;
     private NavMeshAgent navAgent;
     private TargetFinder targetFinder;
     private Transform currentTarget;
