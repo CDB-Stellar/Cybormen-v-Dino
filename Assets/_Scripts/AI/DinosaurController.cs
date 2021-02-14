@@ -45,6 +45,10 @@ public class DinosaurController : MonoBehaviour
                 break;
         }
     }
+    private DinosaurState Die()
+    {
+        return DinosaurState.Dead;
+    }
     private void Attack()
     {
         /*TODO
