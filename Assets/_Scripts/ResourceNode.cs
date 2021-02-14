@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour, IWorkable
 {
+    public ResourceType nodeType;
     public float workTime;
+    public float harvestAmount;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public bool DoWork(float currentTime)
     {
         if (currentTime >= workTime)
         {
+            GameEvents.current.IncrementResource(nodeType, harvestAmount);
             return true;
         }
         else

@@ -9,7 +9,6 @@ public class CybermanController : MonoBehaviour
     public CybermanTask CurrentTask { get; private set; }    
     
     private const float WORK_SPEED = 1f;
-
     private Transform Village;
     private CybermanState currentState;
     private NavMeshAgent navAgent;
@@ -34,7 +33,6 @@ public class CybermanController : MonoBehaviour
     }    
     private void Update()
     {
-        Debug.Log(currentState.ToString());
         switch (currentState)
         {
             case CybermanState.Idle:
@@ -47,7 +45,7 @@ public class CybermanController : MonoBehaviour
                 break;
             case CybermanState.MovingToVillage:
                 currentState = MoveToVillage();
-                break;
+                break;            
             default:
                 break;
         }
@@ -89,10 +87,9 @@ public class CybermanController : MonoBehaviour
         {
             return CybermanState.MovingToVillage;
         }
-    }
+    }   
     private bool NavAgentArrived()
-    {
-        Debug.Log(Vector3.Distance(navAgent.destination, transform.position) + " < " + navAgent.stoppingDistance + " = " + (Vector3.Distance(navAgent.destination, transform.position) < navAgent.stoppingDistance));
+    {        
         return Vector3.Distance(navAgent.destination, transform.position) < navAgent.stoppingDistance;
     }
     public void AssignTask(CybermanTask newTask)
