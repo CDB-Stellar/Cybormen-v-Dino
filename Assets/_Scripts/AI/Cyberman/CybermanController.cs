@@ -52,6 +52,11 @@ public class CybermanController : MonoBehaviour
     }
     private CybermanState MoveToTask()
     {
+        if(CurrentTask.TaskLocation == null)
+        {
+            CurrentTask = null;
+            return CybermanState.MovingToVillage;
+        }
         navAgent.SetDestination(CurrentTask.TaskLocation.position);
         if (NavAgentArrived())
         {

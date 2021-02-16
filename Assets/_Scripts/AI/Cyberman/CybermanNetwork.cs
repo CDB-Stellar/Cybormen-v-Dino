@@ -52,7 +52,15 @@ public class CybermanNetwork : MonoBehaviour
     }
     private void EnqueueTask(object sender, CybermanTaskEventArgs e)
     {
-        TaskBuffer.Enqueue(e.Task);
+        if (TaskBuffer.Count < ActiveCybermen.Count + ActiveCybermen.Count/2)
+        {
+            TaskBuffer.Enqueue(e.Task);
+        }
+        else
+        {
+            Debug.LogWarning("To many Tasks Queued");
+        }
+        
     }
     private IEnumerator FindCybermanWithDealy(float delay)
     {

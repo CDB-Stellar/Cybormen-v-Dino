@@ -48,9 +48,10 @@ public class DinosaurController : MonoBehaviour
         }
     }   
     private DinosaurState Attack()
-    {
+    {        
         if (currentTarget != null && NavAgentArrived() && !currentTarget.CompareTag("Village"))
         {
+            navAgent.SetDestination(currentTarget.position);
             currentTarget.GetComponent<ObjectHealth>().TakeDamage(damage);
             return DinosaurState.Attacking;
         }
