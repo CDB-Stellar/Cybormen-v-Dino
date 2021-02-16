@@ -12,6 +12,9 @@ public class FieldOfViewEditor : Editor
 
         Handles.color = Color.red;
         foreach (Transform visableTarget in tgtFdr.visableTargets)
-            Handles.DrawLine(tgtFdr.transform.position, visableTarget.position);
+            if (visableTarget != null)
+            {
+                Handles.DrawLine(tgtFdr.transform.position, visableTarget.position);
+            }
     }
 }

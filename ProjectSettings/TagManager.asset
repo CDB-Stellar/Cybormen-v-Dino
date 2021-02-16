@@ -6,7 +6,14 @@ TagManager:
   tags:
   - Caveman
   - Tower
-  - House
+  - Building
+  - Cyberman
+  - Village
+  - Projectile
+  - LevelBoundary
+  - BEnemy
+  - MEnemy
+  - SEnemy
   layers:
   - Default
   - TransparentFX
@@ -16,13 +23,13 @@ TagManager:
   - UI
   - DinosaurTarget
   - Obstacle
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Factory
+  - Resource
+  - Projectile
+  - BEnemy
+  - MEnemy
+  - SEnemy
+  - Enemy
   - 
   - 
   - 

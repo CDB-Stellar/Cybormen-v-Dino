@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] float cameraSpeed;
+    [SerializeField] float rotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,7 @@ public class CameraController : MonoBehaviour
     {
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
-
-        Debug.Log(horiz);
+        float rot = Input.GetAxis("Rotation");
 
         if (horiz > 0.1f || horiz < -0.1f)
         {
@@ -25,7 +25,13 @@ public class CameraController : MonoBehaviour
         }
         if (vert > 0.1f || vert < -0.1f)
         {
-            transform.Translate(Vector3.forward * vert * cameraSpeed, null);
+            transform.Translate(Vector3.forward * vert * cameraSpeed);
         }
+        if (rot > 0.1f || rot < -0.1f)
+        {
+            transform.Rotate(new Vector3(0f, rotationSpeed * rot, 0f), Space.World);
+        }
+
+
     }
 }
