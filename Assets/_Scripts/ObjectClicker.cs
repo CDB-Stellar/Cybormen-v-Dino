@@ -19,8 +19,4 @@ public class ObjectClicker : MonoBehaviour
             } 
         }
     }
-    private void PrintName(GameObject obj)
-    {
-        print(obj.name);
-    }
 }

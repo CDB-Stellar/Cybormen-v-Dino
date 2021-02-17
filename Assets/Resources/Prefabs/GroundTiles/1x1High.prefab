@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5937958276999474881}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 1x1High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +45,10 @@ PrefabInstance:
     - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_Name
       value: GroundWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4490700360215769899, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_RootOrder
@@ -108,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4490700360215769899, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -169,6 +177,10 @@ PrefabInstance:
     - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_Name
       value: GroundWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4490700360215769899, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_RootOrder
@@ -232,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundWall
       objectReference: {fileID: 0}
+    - target: {fileID: 3826367001384806801, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4490700360215769899, guid: 36fb8401d60039e4a8d4684ad341e311, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -293,6 +309,10 @@ PrefabInstance:
     - target: {fileID: 8541409647768344253, guid: 8c1f46a08cd56af47a9ba227191095f1, type: 3}
       propertyPath: m_Name
       value: GroundLowField
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541409647768344253, guid: 8c1f46a08cd56af47a9ba227191095f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9062085219940813831, guid: 8c1f46a08cd56af47a9ba227191095f1, type: 3}
       propertyPath: m_RootOrder
