@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4969745641695358312}
   - component: {fileID: 106820822519102851}
   - component: {fileID: 4774432509613797259}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: FactoryBluePrint
   m_TagString: Building
   m_Icon: {fileID: 0}
