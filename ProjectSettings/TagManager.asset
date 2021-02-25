@@ -9,6 +9,11 @@ TagManager:
   - Building
   - Cyberman
   - Village
+  - Projectile
+  - LevelBoundary
+  - BEnemy
+  - MEnemy
+  - SEnemy
   layers:
   - Default
   - TransparentFX
@@ -20,12 +25,12 @@ TagManager:
   - Obstacle
   - Factory
   - Resource
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Projectile
+  - BEnemy
+  - MEnemy
+  - SEnemy
+  - Enemy
+  - Ground
   - 
   - 
   - 

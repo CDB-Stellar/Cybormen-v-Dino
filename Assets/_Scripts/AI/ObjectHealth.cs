@@ -24,8 +24,6 @@ public class ObjectHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
-        
-        Debug.Log(currentHealth);
     }
     public void TakeDamage(int amount)
     {        
