@@ -10,6 +10,7 @@ public class DinosaurController : MonoBehaviour
     public float stopDis;
     public int damage;
 
+    private Animator anim;
     private NavMeshAgent navAgent;
     private TargetFinder targetFinder;
     private ObjectHealth health;
@@ -20,9 +21,11 @@ public class DinosaurController : MonoBehaviour
     {
         Attacking,
         Moving,
+        Idle
     }
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
         targetFinder = GetComponent<TargetFinder>();
         health = GetComponent<ObjectHealth>();
@@ -43,13 +46,22 @@ public class DinosaurController : MonoBehaviour
             case DinosaurState.Moving:
                 currentState = Moving();
                 break;
+            case DinosaurState.Idle:
+                currentState = Idle();
+                break;
             default:
                 break;
         }
     }   
     private DinosaurState Attack()
-    {        
-        if (currentTarget != null && NavAgentArrived() && !currentTarget.CompareTag("Village"))
+    {
+        if (currentTarget != null && currentTarget.CompareTag("Village"))
+        {
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isAttacking", false);
+            return DinosaurState.Idle;
+        }
+        else if (currentTarget != null && NavAgentArrived())
         {
             navAgent.SetDestination(currentTarget.position);
             currentTarget.GetComponent<ObjectHealth>().TakeDamage(damage);
@@ -57,9 +69,9 @@ public class DinosaurController : MonoBehaviour
         }
         else
         {
+            anim.SetBool("isAttacking", false);
             return DinosaurState.Moving;
-        }
-        
+        }        
     }
     private DinosaurState Moving()
     {
@@ -68,12 +80,26 @@ public class DinosaurController : MonoBehaviour
         navAgent.SetDestination(currentTarget.position);
         if (NavAgentArrived())
         {
+            anim.SetBool("isAttacking", true);
             return DinosaurState.Attacking;
         }
         else
-        {
+        {            
             return DinosaurState.Moving;
         }    
+    }
+    private DinosaurState Idle()
+    {
+        currentTarget = DetermineTarget();
+        if (currentTarget != null)
+        {
+            anim.SetBool("isIdle", false);
+            return DinosaurState.Moving;
+        }
+        else
+        {
+            return DinosaurState.Idle;
+        }
     }
     private Transform DetermineTarget()
     {
