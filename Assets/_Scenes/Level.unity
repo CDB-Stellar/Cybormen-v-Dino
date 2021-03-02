@@ -12502,7 +12502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7484bcb4eea78a4fa8c6ec55e1350e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectBluePrint: {fileID: 2551823759977869085, guid: e4ada5d1260d64f4387292cb6f881767, type: 3}
+  objectBluePrint: {fileID: 1881869005115364117, guid: e4ada5d1260d64f4387292cb6f881767, type: 3}
 --- !u!1001 &380957515
 PrefabInstance:
   m_ObjectHideFlags: 0
