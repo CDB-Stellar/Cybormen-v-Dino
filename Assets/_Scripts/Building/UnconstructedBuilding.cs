@@ -21,11 +21,15 @@ public class UnconstructedBuilding : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 5000000.0f, placeLayer))
         {
-            transform.position = hit.point;
+            transform.position = new Vector3(Mathf.RoundToInt(hit.point.x), Mathf.RoundToInt(hit.point.y), Mathf.RoundToInt(hit.point.z));
         }
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(prefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        else if(Input.GetMouseButtonDown(1))
+        {
             Destroy(gameObject);
         }
     }

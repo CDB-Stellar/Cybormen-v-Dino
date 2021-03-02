@@ -91,7 +91,7 @@ public class DinosaurController : MonoBehaviour
     private DinosaurState Idle()
     {
         currentTarget = DetermineTarget();
-        if (currentTarget != null)
+        if (!currentTarget.CompareTag("Village"))
         {
             anim.SetBool("isIdle", false);
             return DinosaurState.Moving;
