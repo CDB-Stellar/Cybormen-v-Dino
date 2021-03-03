@@ -174,7 +174,8 @@ GameObject:
   - component: {fileID: 2317753845029346559}
   - component: {fileID: 1694913953979306842}
   - component: {fileID: 3486203974285715344}
-  m_Layer: 0
+  - component: {fileID: -7225021457124769330}
+  m_Layer: 6
   m_Name: RockCannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,3 +246,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-7225021457124769330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125920882333402693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1791418, y: 1.1746074, z: 1.6050589}
+  m_Center: {x: 0, y: 0.000461936, z: 0.7830171}

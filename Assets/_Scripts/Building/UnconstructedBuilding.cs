@@ -2,35 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnconstructedBuilding : MonoBehaviour
+public class UnConstructedBuilding : MonoBehaviour, IWorkable
 {
-    public GameObject prefab;
-    public LayerMask placeLayer;
-    public string cameraName;
-    
-    private Camera camera; 
-    private RaycastHit hit;
+    public float buildTime;
+    public float riseRate;
+    public Transform building;
 
-    private void Awake()
+    private ComponenetEnabler enabler;
+    private bool isBuilding;
+
+    public bool DoWork(float currentTime)
     {
-        camera = GameObject.Find(cameraName).GetComponent<Camera>();
+        if (currentTime > buildTime)
+        {
+            isBuilding = true;
+            return true;
+        }
+        else
+        {            
+            return false;
+        }
+    }
+    private void Start()
+    {
+        CybermanEvents.current.EnqueueTask(new CybermanTask(transform, this));
     }
     // Update is called once per frame
     void Update()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 5000000.0f, placeLayer))
+        if (isBuilding)
         {
-            transform.position = new Vector3(Mathf.RoundToInt(hit.point.x), Mathf.RoundToInt(hit.point.y), Mathf.RoundToInt(hit.point.z));
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(prefab, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-        else if(Input.GetMouseButtonDown(1))
-        {
-            Destroy(gameObject);
+            if (building.position.y < -0.1f)
+            {
+                building.Translate(new Vector3(0f, riseRate, 0f));                
+            }
+            else
+            {
+                building.position = new Vector3(building.position.x, 0f, building.position.z);
+                enabler = building.GetComponent<ComponenetEnabler>();
+                enabler.EnableAllComponents();
+
+                building.parent = null;
+                Destroy(gameObject);            
+            }
         }
     }
 }

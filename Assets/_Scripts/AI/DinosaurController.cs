@@ -126,8 +126,6 @@ public class DinosaurController : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("New Target: " + newTarget.name);
         return newTarget;
     }
     private bool NavAgentArrived()

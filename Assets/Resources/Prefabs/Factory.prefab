@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8287459348043870431}
   - component: {fileID: 3360370000400714016}
   - component: {fileID: 7260767968651881565}
+  - component: {fileID: 8232686618423431208}
   - component: {fileID: -7181493480345561420}
   - component: {fileID: 8649986463223005502}
   - component: {fileID: 2396188040374926518}
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494557327459782922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 310595440951844850}
@@ -94,14 +95,14 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494557327459782922}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.4661, y: 0.5, z: 1.278}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.95100003, y: 0.5, z: 0.27400002}
+  m_Center: {x: 0, y: 0.5, z: 0.27400002}
   m_TimeToStationary: 0.5
 --- !u!65 &7260767968651881565
 BoxCollider:
@@ -115,8 +116,8 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.2586608, y: 1.0475411, z: 2.8394976}
-  m_Center: {x: 0.9514513, y: 0.534757, z: 0.27438855}
---- !u!114 &-7181493480345561420
+  m_Center: {x: 0, y: 0.534757, z: 0}
+--- !u!114 &8232686618423431208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +125,18 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494557327459782922}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34451c4c494ff44ea489a4d4d7124bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7181493480345561420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494557327459782922}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 875d1706df23e3d45b6fa48c40d4da05, type: 3}
   m_Name: 
@@ -138,7 +151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494557327459782922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a52e6d144bc1fd43b29d2d4a47ffbce, type: 3}
   m_Name: 
@@ -153,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494557327459782922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 619ddf99cb88a314e83d1aaf20c90ec5, type: 3}
   m_Name: 
@@ -236,11 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452645047587875102, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.831
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6452645047587875102, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.271
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 6452645047587875102, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
