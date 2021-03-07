@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] float cameraSpeed;
+    [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -21,11 +16,11 @@ public class CameraController : MonoBehaviour
 
         if (horiz > 0.1f || horiz < -0.1f)
         {
-            transform.Translate(Vector3.right * horiz * cameraSpeed);
+            transform.Translate(Vector3.right * horiz * movementSpeed);
         }
         if (vert > 0.1f || vert < -0.1f)
         {
-            transform.Translate(Vector3.forward * vert * cameraSpeed);
+            transform.Translate(Vector3.forward * vert * movementSpeed);
         }
         if (rot > 0.1f || rot < -0.1f)
         {

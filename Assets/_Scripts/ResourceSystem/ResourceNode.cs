@@ -13,6 +13,10 @@ public class ResourceNode : MonoBehaviour, IWorkable
     {
         health = GetComponent<ObjectHealth>();
     }
+    private void Start()
+    {
+        ;
+    }
     public bool DoWork(float currentTime)
     {
         if (currentTime >= workTime)

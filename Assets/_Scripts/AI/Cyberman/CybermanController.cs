@@ -9,11 +9,13 @@ public class CybermanController : MonoBehaviour
     public CybermanTask CurrentTask { get; private set; }    
     
     private const float WORK_SPEED = 1f;
-    private Transform Village;
     private CybermanState currentState;
-    private NavMeshAgent navAgent;
 
-    float workTimer;
+    private Transform Village;
+    private NavMeshAgent navAgent;
+    private Animator anim;
+
+    private float workTimer;
 
     enum CybermanState
     {
@@ -24,12 +26,13 @@ public class CybermanController : MonoBehaviour
     }
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
     }
     private void Start()
     {
         Village = GameObject.Find("Village").transform;
-        currentState = CybermanState.Idle;
+        currentState = CybermanState.Idle;       
     }    
     private void Update()
     {
@@ -55,11 +58,15 @@ public class CybermanController : MonoBehaviour
         if(CurrentTask.TaskLocation == null)
         {
             CurrentTask = null;
+            anim.SetBool("isMoving", true);
+            anim.SetBool("isWorking", false);
             return CybermanState.MovingToVillage;
         }
         navAgent.SetDestination(CurrentTask.TaskLocation.position);
         if (NavAgentArrived())
         {
+            Debug.Log("Cyberman arrived at " + CurrentTask.TaskLocation.position);
+            anim.SetBool("isWorking", true);
             return CybermanState.DoingTask;
         }
         else
@@ -69,14 +76,20 @@ public class CybermanController : MonoBehaviour
     }
     private CybermanState DoTask()
     {
+        if (CurrentTask.TaskLocation == null)
+        {
+            return CybermanState.MovingToVillage;
+        }
         workTimer += WORK_SPEED * Time.deltaTime;
         if (CurrentTask.Work.DoWork(workTimer))
         {
             workTimer = 0f;
+
+            anim.SetBool("isWorking", false);
             return CybermanState.MovingToVillage;
         }
         else
-        {            
+        {
             return CybermanState.DoingTask;
         }
     }
@@ -86,6 +99,7 @@ public class CybermanController : MonoBehaviour
         if (NavAgentArrived())
         {
             CurrentTask = null;
+            anim.SetBool("isMoving", false);
             return CybermanState.Idle;
         }
         else
@@ -101,6 +115,7 @@ public class CybermanController : MonoBehaviour
     {
         CurrentTask = newTask;
         currentState = CybermanState.MovingToTask;
+        anim.SetBool("isMoving", true);
     }
 
 

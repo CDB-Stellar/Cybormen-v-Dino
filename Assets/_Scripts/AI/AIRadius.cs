@@ -5,4 +5,8 @@ using UnityEngine;
 public class AIRadius : MonoBehaviour
 {
     public float radius;
+    private void Start()
+    {
+        ;
+    }
 }

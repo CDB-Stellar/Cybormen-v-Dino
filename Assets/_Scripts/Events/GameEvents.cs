@@ -15,7 +15,6 @@ public class GameEvents : MonoBehaviour
     
     public void IncrementResource(ResourceType resource, float amount)
     {
-        Debug.Log("INCREMENT RESOURCE CALLED: " + amount + " " + resource.ToString());
         OnIncrementResource?.Invoke(resource, amount);
     }
 }
