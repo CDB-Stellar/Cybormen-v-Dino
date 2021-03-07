@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a5b8f3745133f418b6d9c02ba66ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5509060749848512929, guid: 8ae78bc6b1957a24985611259bb6de05, type: 3}
+  prefab: {fileID: 4533961811730721909, guid: 8a1c85b450f463a4195098cdeec9ed52, type: 3}
   placeLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -103,5 +103,6 @@ MonoBehaviour:
     m_Bits: 32759
   cameraName: Camera
   detectionCubeSize: {x: 2, y: 3.5, z: 2}
+  detectionCubeOffset: {x: 0, y: 0, z: 0}
   green: {fileID: 2100000, guid: 35e73e20b2b06b4438d53b9e257d687e, type: 2}
   red: {fileID: 2100000, guid: bacbac3031469a445a1ed91ecf4efb24, type: 2}

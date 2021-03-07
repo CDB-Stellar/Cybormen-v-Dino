@@ -32,7 +32,7 @@ public class CybermanController : MonoBehaviour
     private void Start()
     {
         Village = GameObject.Find("Village").transform;
-        currentState = CybermanState.Idle;
+        currentState = CybermanState.Idle;       
     }    
     private void Update()
     {

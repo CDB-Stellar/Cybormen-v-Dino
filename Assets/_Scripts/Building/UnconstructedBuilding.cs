@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class UnConstructedBuilding : MonoBehaviour, IWorkable
 {
+    public int BuildingLayer;
     public float buildTime;
     public float riseRate;
     public Transform building;
 
-    private ComponenetEnabler enabler;
+    private ObjectHealth buildingHealth;
     private bool isBuilding;
 
+    private void Awake()
+    {
+        buildingHealth = transform.GetChild(0).GetComponent<ObjectHealth>();
+    }
+    private void Start()
+    {
+        CybermanEvents.current.EnqueueTask(new CybermanTask(transform, this));
+    }
     public bool DoWork(float currentTime)
     {
         if (currentTime > buildTime)
@@ -22,10 +31,6 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
         {            
             return false;
         }
-    }
-    private void Start()
-    {
-        CybermanEvents.current.EnqueueTask(new CybermanTask(transform, this));
     }
     // Update is called once per frame
     void Update()
@@ -39,9 +44,8 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
             else
             {
                 building.position = new Vector3(building.position.x, 0f, building.position.z);
-                enabler = building.GetComponent<ComponenetEnabler>();
-                enabler.EnableAllComponents();
-
+                buildingHealth.InitalizeHealthBar();
+                building.gameObject.layer = BuildingLayer;
                 building.parent = null;
                 Destroy(gameObject);            
             }
