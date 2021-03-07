@@ -819,9 +819,9 @@ GameObject:
   - component: {fileID: 9124104758698066458}
   - component: {fileID: 9124104758698066459}
   - component: {fileID: 9124104758698066660}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ankylosaurus
-  m_TagString: Untagged
+  m_TagString: MEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
