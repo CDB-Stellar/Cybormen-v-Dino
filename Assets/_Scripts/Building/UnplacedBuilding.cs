@@ -52,7 +52,6 @@ public class UnplacedBuilding : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && canPlace)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         else if(Input.GetMouseButtonDown(1))

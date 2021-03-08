@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3053993334406531905}
   - component: {fileID: 3053993334406531906}
   m_Layer: 0
-  m_Name: PlayCam
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
