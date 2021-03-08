@@ -65,7 +65,6 @@ public class DinosaurController : MonoBehaviour
         {
             navAgent.SetDestination(currentTarget.position);
             currentTarget.GetComponent<ObjectHealth>().TakeDamage(damage);
-            FindObjectOfType<AudioManager>().Play("FirstImpact");
             return DinosaurState.Attacking;
         }
         else
