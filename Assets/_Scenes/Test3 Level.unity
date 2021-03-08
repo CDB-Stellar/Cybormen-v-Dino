@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32526c6836a49b7449668e451e8fb1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerActive: 0
   towerType: 0
   projectilePrefab: {fileID: 9158577954719353971, guid: 41dd3f2dd828b1248b7cf7437b3d8d0b, type: 3}
   shootFrom: {fileID: 977022708}
