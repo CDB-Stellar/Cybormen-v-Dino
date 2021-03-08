@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2119509947}
   m_Layer: 0
   m_Name: ShootFrom
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerType: 2
-  projectilePrefab: {fileID: 9158577954719353971, guid: 41dd3f2dd828b1248b7cf7437b3d8d0b, type: 3}
+  projectilePrefab: {fileID: 5696543047930601493, guid: 18b18e04e4731d74ab4c134ee95becf5, type: 3}
   shootFrom: {fileID: 2119509947}
   fireRate: 2
   moveSpeed: 15

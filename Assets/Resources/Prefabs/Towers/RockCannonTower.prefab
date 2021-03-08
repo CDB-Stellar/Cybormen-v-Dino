@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32526c6836a49b7449668e451e8fb1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonTower: 1
-  projectilePrefab: {fileID: 9158577954719353971, guid: 41dd3f2dd828b1248b7cf7437b3d8d0b, type: 3}
+  towerType: 0
+  projectilePrefab: {fileID: 4735273667780214302, guid: 6f530edba898ede488e2c7486bbd0fcf, type: 3}
   shootFrom: {fileID: 6384225080478913950}
   fireRate: 1
   moveSpeed: 15
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 6384225080478913950}
   m_Layer: 0
   m_Name: ShootFrom
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

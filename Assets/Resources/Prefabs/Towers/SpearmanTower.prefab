@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerType: 1
-  projectilePrefab: {fileID: 9158577954719353971, guid: 41dd3f2dd828b1248b7cf7437b3d8d0b, type: 3}
+  projectilePrefab: {fileID: 4040659723259326246, guid: c244405fa104746459ed75df75b5caa1, type: 3}
   shootFrom: {fileID: 9135756802045525454}
   fireRate: 2
   moveSpeed: 10
