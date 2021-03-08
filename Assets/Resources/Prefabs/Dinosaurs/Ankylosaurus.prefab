@@ -815,6 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8725141068435446294}
   - component: {fileID: 3455880797250748524}
+  - component: {fileID: 5958002220392309687}
   - component: {fileID: 9124104758698066457}
   - component: {fileID: 9124104758698066458}
   - component: {fileID: 9124104758698066459}
@@ -861,6 +862,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &5958002220392309687
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8241091706610778284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.36524284
+  m_Height: 1.8517814
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.68478787, z: 0.08144796}
 --- !u!114 &9124104758698066457
 MonoBehaviour:
   m_ObjectHideFlags: 0
