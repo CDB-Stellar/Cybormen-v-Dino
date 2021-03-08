@@ -13,7 +13,6 @@ public class ResourceValueToUI : MonoBehaviour
     private void Awake()
     {
         resourceValue = GetComponent<TMP_Text>();
-        Debug.Log(resourceValue);
     }
     private void Update()
     {

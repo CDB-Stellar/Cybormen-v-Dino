@@ -6,27 +6,51 @@ using System;
 
 public class ObjectHealth : MonoBehaviour
 {
+    public GameObject healthBarPrefab;
+    public bool startActive;
     public int maxHealth;
+    public Vector3 GUIOffset;
+    [Header("Death Settings")]
     public float descendRate;
     public float destroyHeight;
+    
    
     private HealthBar healthBar;
     private int currentHealth;
     private bool isDead;
-   
-
-    void Awake()
+    private void Awake()
     {
-        healthBar = GetComponentInChildren<HealthBar>();
+        if (startActive)
+        {
+            healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();
+            Debug.Log(healthBar);
+        }
     }
     private void Start()
     {
+        if (startActive)
+        {
+            currentHealth = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
+            healthBar.SetHealth(currentHealth);
+        }
+    }   
+    public void InitalizeHealthBar()
+    {        
+        healthBar = healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();
+
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
     }
     public void TakeDamage(int amount)
-    {        
+    {
+        if (!IsActive())
+        {
+            Debug.LogError("HealthBar Has not been initalized");
+            return;
+        }
+
         currentHealth = (int)Mathf.Max(0f, currentHealth - amount);
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0f)
@@ -34,6 +58,12 @@ public class ObjectHealth : MonoBehaviour
     }
     private void StartDeathSequence()
     {
+        if (!IsActive())
+        {
+            Debug.LogError("HealthBar Has not been initalized");
+            return;
+        }
+
         isDead = true;
         gameObject.layer = 0;
 
@@ -46,6 +76,11 @@ public class ObjectHealth : MonoBehaviour
         NavMeshAgent navAgent;
         if (TryGetComponent(out navAgent)) navAgent.enabled = false;
     }
+    private bool IsActive()
+    {
+        if (healthBar == null) return false;        
+        else return true;
+    }
     private void Update() 
     {
         if (isDead)
@@ -56,5 +91,5 @@ public class ObjectHealth : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
+    }    
 }

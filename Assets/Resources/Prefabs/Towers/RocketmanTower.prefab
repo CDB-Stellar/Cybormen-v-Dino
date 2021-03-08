@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2119509946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119509947}
+  m_Layer: 0
+  m_Name: ShootFrom
+  m_TagString: Tower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119509947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119509946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.594, z: 0.224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4205315396235944260}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5509060749848512929
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +41,11 @@ GameObject:
   - component: {fileID: 5134047761204040475}
   - component: {fileID: 8111007846356475070}
   - component: {fileID: 6301910132505389172}
+  - component: {fileID: 2464278732109055365}
+  - component: {fileID: 889447238236947885}
+  - component: {fileID: -3528677761963582434}
+  - component: {fileID: 1638176869}
+  - component: {fileID: 1638176868}
   m_Layer: 0
   m_Name: RocketmanTower
   m_TagString: Tower
@@ -27,8 +62,9 @@ Transform:
   m_GameObject: {fileID: 5509060749848512929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_LocalScale: {x: 1.5, y: 1.25, z: 1.5}
+  m_Children:
+  - {fileID: 4205315396235944260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,3 +117,168 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2464278732109055365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.89383507, y: 1.8099694, z: 0.89383507}
+  m_Center: {x: 0, y: 0.8886788, z: -0.000000059604645}
+--- !u!114 &889447238236947885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a52e6d144bc1fd43b29d2d4a47ffbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 6452645047587875098, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
+  startActive: 0
+  maxHealth: 125
+  GUIOffset: {x: 0, y: 3, z: 0}
+  descendRate: 0.15
+  destroyHeight: -3
+--- !u!114 &-3528677761963582434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619ddf99cb88a314e83d1aaf20c90ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+--- !u!114 &1638176869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32526c6836a49b7449668e451e8fb1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerType: 2
+  projectilePrefab: {fileID: 5696543047930601493, guid: 18b18e04e4731d74ab4c134ee95becf5, type: 3}
+  shootFrom: {fileID: 2119509947}
+  fireRate: 2
+  moveSpeed: 15
+  rotationBit: {fileID: 3537463977953967102}
+  targetPriority:
+  - BEnemy
+  - MEnemy
+  - SEnemy
+--- !u!114 &1638176868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aad032cfd59bd347a089d4c74526cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visableTargets: []
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  viewRadius: 15
+--- !u!1001 &860284079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5134047761204040475}
+    m_Modifications:
+    - target: {fileID: 3537463977638977361, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_Name
+      value: Tower_Cyberman
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+--- !u!1 &3537463977953967102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537463977638977361, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+  m_PrefabInstance: {fileID: 860284079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4205315396235944260 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4205315395451160043, guid: f910f92e865eb8e4fbd74aaf5df17a95, type: 3}
+  m_PrefabInstance: {fileID: 860284079}
+  m_PrefabAsset: {fileID: 0}

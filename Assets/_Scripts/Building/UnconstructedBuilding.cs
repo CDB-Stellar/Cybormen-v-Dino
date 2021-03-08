@@ -2,31 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnconstructedBuilding : MonoBehaviour
+public class UnConstructedBuilding : MonoBehaviour, IWorkable
 {
-    public GameObject prefab;
-    public LayerMask placeLayer;
-    public string cameraName;
-    
-    private Camera camera; 
-    private RaycastHit hit;
+    public int BuildingLayer;
+    public float buildTime;
+    public float riseRate;
+    public Transform building;
+
+    private ObjectHealth buildingHealth;
+    private bool isBuilding;
 
     private void Awake()
     {
-        camera = GameObject.Find(cameraName).GetComponent<Camera>();
+        buildingHealth = transform.GetChild(0).GetComponent<ObjectHealth>();
+    }
+    private void Start()
+    {
+        CybermanEvents.current.EnqueueTask(new CybermanTask(transform, this));
+    }
+    public bool DoWork(float currentTime)
+    {
+        if (currentTime > buildTime)
+        {
+            isBuilding = true;
+            return true;
+        }
+        else
+        {            
+            return false;
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 5000000.0f, placeLayer))
+        if (isBuilding)
         {
-            transform.position = hit.point;
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(prefab, transform.position, transform.rotation);
-            Destroy(gameObject);
+            if (building.position.y < -0.1f)
+            {
+                building.Translate(new Vector3(0f, riseRate, 0f));                
+            }
+            else
+            {
+                building.position = new Vector3(building.position.x, 0f, building.position.z);
+                buildingHealth.InitalizeHealthBar();
+                building.gameObject.layer = BuildingLayer;
+                building.parent = null;
+                Destroy(gameObject);            
+            }
         }
     }
 }
