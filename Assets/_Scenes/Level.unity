@@ -12503,6 +12503,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectBluePrint: {fileID: 1881869005115364117, guid: e4ada5d1260d64f4387292cb6f881767, type: 3}
+  wood: 0
+  stone: 2
+  iron: 5
+  electronics: 10
 --- !u!1001 &380957515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28342,6 +28346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectBluePrint: {fileID: 5562246894308997755, guid: e8ca2ab383bebc746b981b77349a098f, type: 3}
+  wood: 4
+  stone: 10
+  iron: 2
+  electronics: 0
 --- !u!4 &778763353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
@@ -56254,6 +56262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectBluePrint: {fileID: 581260019702516440, guid: 0c18d1771a8ca284d9faa8bbeb8b3688, type: 3}
+  wood: 10
+  stone: 2
+  iron: 0
+  electronics: 0
 --- !u!4 &1609525864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
@@ -71975,6 +71987,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectBluePrint: {fileID: 5204327756841685055, guid: e91b91f5bd2d4e44fa0093aea17ff0d7, type: 3}
+  wood: 5
+  stone: 10
+  iron: 20
+  electronics: 0
 --- !u!4 &1994728200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
