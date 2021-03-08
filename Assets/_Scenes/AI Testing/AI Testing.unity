@@ -1738,22 +1738,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12edb85306c8374c98ec4c0e5391d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocations: []
-  dinosaurPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Waves:
   - waveTime: 15
     waveContents:
-    - dinosaur: 0
+    - dinosaur: {fileID: 0}
       spawnAmount: 1
       spawnRate: 10
-      spawnLocation: 0
-    - dinosaur: 0
+      spawnLocation: {fileID: 0}
+      CanSpawn: 0
+    - dinosaur: {fileID: 0}
       spawnAmount: 0
       spawnRate: 5
-      spawnLocation: 0
+      spawnLocation: {fileID: 0}
+      CanSpawn: 0
 --- !u!1 &1570803313
 GameObject:
   m_ObjectHideFlags: 0
