@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class DinosaurSpawner : MonoBehaviour
@@ -42,7 +43,7 @@ public class DinosaurSpawner : MonoBehaviour
                     //Check all dinosaurs are dead
                     if (NoAliveDinosaurs())
                     {
-                        // Congrats you win
+                        // Congrats you win                        
                     }
                 }
                 else
