@@ -19,7 +19,6 @@ public class DinosaurSpawner : MonoBehaviour
     void FixedUpdate()
     {
         currentTime = (float)Math.Round(Time.time, 2);
-        Debug.Log(currentTime);
         if (currentWave != null && currentTime != 0)
         {
             foreach (DinoSpawn data in currentWave.waveContents)

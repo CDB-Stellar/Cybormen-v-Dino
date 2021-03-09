@@ -164,10 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32526c6836a49b7449668e451e8fb1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerActive: 0
   towerType: 1
   projectilePrefab: {fileID: 4040659723259326246, guid: c244405fa104746459ed75df75b5caa1, type: 3}
   shootFrom: {fileID: 9135756802045525454}
-  fireRate: 2
+  fireRate: 1
   moveSpeed: 10
   rotationBit: {fileID: 3537463976927084952}
   targetPriority:

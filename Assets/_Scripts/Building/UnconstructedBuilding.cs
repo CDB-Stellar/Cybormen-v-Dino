@@ -10,11 +10,14 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
     public Transform building;
 
     private ObjectHealth buildingHealth;
+    private ProjectileSystem tower = null;
     private bool isBuilding;
 
     private void Awake()
     {
         buildingHealth = transform.GetChild(0).GetComponent<ObjectHealth>();
+        // THIS IS REALLY BAD FIX IT LATER
+        transform.GetChild(0).TryGetComponent(out tower);
     }
     private void Start()
     {
@@ -28,7 +31,7 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
             return true;
         }
         else
-        {            
+        {
             return false;
         }
     }
@@ -39,15 +42,18 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
         {
             if (building.position.y < -0.1f)
             {
-                building.Translate(new Vector3(0f, riseRate, 0f));                
+                building.Translate(new Vector3(0f, riseRate, 0f));
             }
             else
             {
+                // FIX THIS YOU FUCKER ITS AWFULL
+                if (tower != null)                
+                    tower.ActivateTower();                
                 building.position = new Vector3(building.position.x, 0f, building.position.z);
                 buildingHealth.InitalizeHealthBar();
                 building.gameObject.layer = BuildingLayer;
                 building.parent = null;
-                Destroy(gameObject);            
+                Destroy(gameObject);
             }
         }
     }

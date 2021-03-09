@@ -15,7 +15,7 @@ public class PlaceBuilding : MonoBehaviour
         BuildRequestArgs cost = new BuildRequestArgs(wood, stone, iron, electronics);
         GameEvents.current.CanBuildRequest(this, cost);
 
-        Debug.Log(cost.CanBuild);
+        //Debug.Log(cost.CanBuild);
 
         if (cost.CanBuild)
         {
