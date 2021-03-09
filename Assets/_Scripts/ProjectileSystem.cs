@@ -42,7 +42,7 @@ public class ProjectileSystem : MonoBehaviour
                 Vector3 lookDir = (currentTarget.position - transform.position);
                 rotationBit.transform.rotation = Quaternion.LookRotation(lookDir);
 
-                Debug.Log("Shoot--");
+                //Debug.Log("Shoot--");
                 if (Time.time > nextSpawnTime) //only instantiate new projectile every fireRate increment
                 {
                     if (towerType == 1)

@@ -14,6 +14,9 @@ TagManager:
   - BEnemy
   - MEnemy
   - SEnemy
+  - Spear
+  - Rocket
+  - RockShell
   layers:
   - Default
   - TransparentFX

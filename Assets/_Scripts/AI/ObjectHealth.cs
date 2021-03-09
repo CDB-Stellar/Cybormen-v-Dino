@@ -22,8 +22,7 @@ public class ObjectHealth : MonoBehaviour
     {
         if (startActive)
         {
-            healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();
-            Debug.Log(healthBar);
+            healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();         
         }
     }
     private void Start()

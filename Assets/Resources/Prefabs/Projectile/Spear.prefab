@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6599919789897823670}
   m_Layer: 10
   m_Name: Spear
-  m_TagString: Projectile
+  m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200823cb57b1e124f9b8712b2ddbeccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDir: {x: 0, y: 0, z: 0}
-  moveSpeed: 0
+  shootDir: {x: -0.09147043, y: -0.0033539233, z: -0.99580216}
+  moveSpeed: 10
   target: {fileID: 0}

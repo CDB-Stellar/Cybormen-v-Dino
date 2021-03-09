@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         Destroy(gameObject); //projectile is destroyed if it hits any other collider
     }
 }
