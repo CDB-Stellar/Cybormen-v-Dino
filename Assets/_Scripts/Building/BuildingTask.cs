@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnConstructedBuilding : MonoBehaviour, IWorkable
+public class BuildingTask : MonoBehaviour, IWorkable
 {
     public int BuildingLayer;
     public float buildTime;
@@ -47,8 +47,8 @@ public class UnConstructedBuilding : MonoBehaviour, IWorkable
             else
             {
                 // FIX THIS YOU FUCKER ITS AWFULL
-                if (tower != null)                
-                    tower.ActivateTower();                
+                if (tower != null)
+                    tower.ActivateTower();
                 building.position = new Vector3(building.position.x, 0f, building.position.z);
                 buildingHealth.InitalizeHealthBar();
                 building.gameObject.layer = BuildingLayer;
