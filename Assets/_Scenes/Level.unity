@@ -51890,6 +51890,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
   m_PrefabInstance: {fileID: 446106345}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1436745515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436745517}
+  - component: {fileID: 1436745516}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1436745516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436745515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712bc0c57397b16448a51dc7ae9538d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BGM1
+    clip: {fileID: 8300000, guid: f030651f884a24c468c1313a8e81bbdf, type: 3}
+    volume: 0.214
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM2
+    clip: {fileID: 8300000, guid: a415dbe08ff416240bd2d725c061292a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FirstImpact
+    clip: {fileID: 8300000, guid: c0c0ecdec310ee949a37d780846f2531, type: 3}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HUMD
+    clip: {fileID: 8300000, guid: 39fcd191e6ac662429d6efe5e2cedee7, type: 3}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1436745517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436745515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1438845512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7673868554967982432, guid: eb4d550193de61e4896db41ef4504e23, type: 3}
