@@ -155,10 +155,10 @@ public class DinosaurController : MonoBehaviour
     {
 
         if (collision.gameObject.CompareTag("Spear"))        
-            health.TakeDamage(10);
-        else if (collision.gameObject.CompareTag("Rocket"))
             health.TakeDamage(20);
+        else if (collision.gameObject.CompareTag("Rocket"))
+            health.TakeDamage(45);
         else if (collision.gameObject.CompareTag("RockShell"))
-            health.TakeDamage(50);
+            health.TakeDamage(100);
     }
 }

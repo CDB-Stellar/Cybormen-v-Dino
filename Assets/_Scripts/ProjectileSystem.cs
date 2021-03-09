@@ -91,6 +91,11 @@ public class ProjectileSystem : MonoBehaviour
             for (int k = 0; k < targetFinder.visableTargets.Count; k++)
             {
                 Transform potentialTarget = targetFinder.visableTargets[k];
+                //LAZY FIX
+                if (potentialTarget == null)
+                {
+                    break;
+                }
                 if (potentialTarget.CompareTag(targetPriority[i]))
                 {
                     if (newTarget.CompareTag(potentialTarget.gameObject.tag))
