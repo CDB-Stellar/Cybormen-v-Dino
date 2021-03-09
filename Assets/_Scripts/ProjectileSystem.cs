@@ -45,11 +45,16 @@ public class ProjectileSystem : MonoBehaviour
                 //Debug.Log("Shoot--");
                 if (fireRate <= fireTimer) //only instantiate new projectile every fireRate increment
                 {
-                    if (towerType == 1)
+                    if (towerType == 1) 
+                    { 
                         anim.Play("Base Layer.Cyberman_Throw", 0, 0.95f); // Play the Cyberman's throw animation
+                        FindObjectOfType<AudioManager>().Play("ArrowShot");
+                    }
                     else if (towerType == 2)
+                    {
                         anim.Play("Base Layer.Cyberman_Shoot", 0, 0.25f); // Play the Cyberman's shoot animation
-
+                        FindObjectOfType<AudioManager>().Play("CannonShot");
+                    }
                     // Instantiate at the shootFrom position and zero rotation.
                     Instantiate(projectilePrefab,
                         new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);

@@ -52029,6 +52029,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: ArrowShot
+    clip: {fileID: 8300000, guid: dbd60e78c787cba4aa72df7d113396a8, type: 3}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CannonShot
+    clip: {fileID: 8300000, guid: c2a4783756e4dea49afa5f846318cf3a, type: 3}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1436745517
 Transform:
   m_ObjectHideFlags: 0
