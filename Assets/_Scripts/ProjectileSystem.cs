@@ -18,7 +18,8 @@ public class ProjectileSystem : MonoBehaviour
 
     private TargetFinder targetFinder; //use the target finder
     private Transform currentTarget;
-    private float nextSpawnTime; //for fire rate, so it doesn't spawn infinitely
+    private float fireTimer; 
+    //for fire rate, so it doesn't spawn infinitely
 
 
     void Awake()
@@ -27,7 +28,6 @@ public class ProjectileSystem : MonoBehaviour
             anim = rotationBit.GetComponent<Animator>(); //for Tower_Cyberman
 
         targetFinder = GetComponent<TargetFinder>();
-        nextSpawnTime += Time.time + fireRate;
     }
     void Update()
     {
@@ -43,7 +43,7 @@ public class ProjectileSystem : MonoBehaviour
                 rotationBit.transform.rotation = Quaternion.LookRotation(lookDir);
 
                 //Debug.Log("Shoot--");
-                if (Time.time > nextSpawnTime) //only instantiate new projectile every fireRate increment
+                if (fireRate <= fireTimer) //only instantiate new projectile every fireRate increment
                 {
                     if (towerType == 1)
                         anim.Play("Base Layer.Cyberman_Throw", 0, 0.95f); // Play the Cyberman's throw animation
@@ -62,11 +62,12 @@ public class ProjectileSystem : MonoBehaviour
                     //        new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);
                     //}
 
-                    nextSpawnTime += fireRate;
+                    fireTimer = 0f;
                 }
-
                 Vector3 shootDir = (currentTarget.position - transform.position).normalized;
                 projectilePrefab.GetComponent<Projectile>().Setup(shootDir, moveSpeed, currentTarget); //add force to the projectile
+
+                fireTimer += Time.deltaTime;
             }
         }
     }
@@ -105,7 +106,7 @@ public class ProjectileSystem : MonoBehaviour
             }
         }
 
-        Debug.Log("New Tower Target: " + newTarget.tag);
+        //Debug.Log("New Tower Target: " + newTarget.tag);
         return newTarget;
     }
     private Transform FindCloser(Transform t1, Transform t2)

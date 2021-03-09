@@ -10,7 +10,13 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        //transform.position += shootDir * moveSpeed * Time.deltaTime; //shoot in direction of enemy [old non-tracking]
+        Debug.Log(target);
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+       
         Vector3 lookDir = (target.position - transform.position);
         transform.rotation = Quaternion.LookRotation(lookDir);
         transform.position += lookDir * moveSpeed * Time.deltaTime; //shoot in direction of enemy (tracking)
@@ -26,6 +32,10 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        Destroy(gameObject); //projectile is destroyed if it hits any other collider
+        if (collision.gameObject.layer == 14)
+        {
+            Destroy(gameObject); //projectile is destroyed if it hits any other collider
+        }
+        
     }
 }
