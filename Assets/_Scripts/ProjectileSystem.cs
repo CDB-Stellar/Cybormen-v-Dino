@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileSystem : MonoBehaviour
 {
+    public bool towerActive = false; //activate tower when finished building
     [Header("0=Cannon, 1=Spear, 2=Rocket")]
     [SerializeField] private int towerType; //to turn on/off animation stuff [0=Cannon, 1=Spear, 2=Rocket]
     [SerializeField] private GameObject projectilePrefab; //what to shoot
@@ -17,7 +18,8 @@ public class ProjectileSystem : MonoBehaviour
 
     private TargetFinder targetFinder; //use the target finder
     private Transform currentTarget;
-    private float nextSpawnTime; //for fire rate, so it doesn't spawn infinitely
+    private float fireTimer; 
+    //for fire rate, so it doesn't spawn infinitely
 
 
     void Awake()
@@ -26,48 +28,62 @@ public class ProjectileSystem : MonoBehaviour
             anim = rotationBit.GetComponent<Animator>(); //for Tower_Cyberman
 
         targetFinder = GetComponent<TargetFinder>();
-        nextSpawnTime += Time.time + fireRate;
     }
     void Update()
     {
-        //currentTarget = testTarget.transform; //for testing
-        currentTarget = DetermineTarget();
-
-        if (!currentTarget.CompareTag("Tower")) //if targeting tower do nothing
+        if (towerActive)
         {
-            // Rotate Cyberman / Turret
-            Vector3 lookDir = (currentTarget.position - transform.position);
-            rotationBit.transform.rotation = Quaternion.LookRotation(lookDir);
+            //currentTarget = testTarget.transform; //for testing
+            currentTarget = DetermineTarget();
 
-            Debug.Log("Shoot--");
-            if (Time.time > nextSpawnTime) //only instantiate new projectile every fireRate increment
+            if (!currentTarget.CompareTag("Tower")) //if targeting tower do nothing
             {
-                if (towerType == 1)
-                    anim.Play("Base Layer.Cyberman_Throw", 0, 0.95f); // Play the Cyberman's throw animation
-                else if (towerType == 2)
-                    anim.Play("Base Layer.Cyberman_Shoot", 0, 0.25f); // Play the Cyberman's shoot animation
+                // Rotate Cyberman / Turret
+                Vector3 lookDir = (currentTarget.position - transform.position);
+                rotationBit.transform.rotation = Quaternion.LookRotation(lookDir);
 
-                // Instantiate at the shootFrom position and zero rotation.
-                Instantiate(projectilePrefab,
-                    new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);
+                //Debug.Log("Shoot--");
+                if (fireRate <= fireTimer) //only instantiate new projectile every fireRate increment
+                {
+                    if (towerType == 1) 
+                    { 
+                        anim.Play("Base Layer.Cyberman_Throw", 0, 0.95f); // Play the Cyberman's throw animation
+                        FindObjectOfType<AudioManager>().Play("ArrowShot");
+                    }
+                    else if (towerType == 2)
+                    {
+                        anim.Play("Base Layer.Cyberman_Shoot", 0, 0.25f); // Play the Cyberman's shoot animation
+                        FindObjectOfType<AudioManager>().Play("CannonShot");
+                    }
+                    // Instantiate at the shootFrom position and zero rotation.
+                    Instantiate(projectilePrefab,
+                        new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);
 
-                // Only shoot projectile after animation plays??
-                //if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Cyberman_Throw"))
-                //{
-                //    // Instantiate at the shootFrom position and zero rotation.
-                //    Instantiate(projectilePrefab,
-                //        new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);
-                //}
+                    // Only shoot projectile after animation plays??
+                    //if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Cyberman_Throw"))
+                    //{
+                    //    // Instantiate at the shootFrom position and zero rotation.
+                    //    Instantiate(projectilePrefab,
+                    //        new Vector3(shootFrom.position.x, shootFrom.position.y, shootFrom.position.z), Quaternion.identity);
+                    //}
 
-                nextSpawnTime += fireRate;
+                    fireTimer = 0f;
+                }
+                Vector3 shootDir = (currentTarget.position - transform.position).normalized;
+                projectilePrefab.GetComponent<Projectile>().Setup(shootDir, moveSpeed, currentTarget); //add force to the projectile
+
+                fireTimer += Time.deltaTime;
             }
-
-            Vector3 shootDir = (currentTarget.position - transform.position).normalized;
-            projectilePrefab.GetComponent<Projectile>().Setup(shootDir, moveSpeed, currentTarget); //add force to the projectile
         }
     }
 
+    public void ActivateTower()
+    {
+        towerActive = true;
+    }
+
     /**_________________________USING TargetFinder_________________________**/
+    //the targets must have a collider!
     private Transform DetermineTarget()
     {
         Transform newTarget = shootFrom.transform; //default target is the tower
@@ -80,6 +96,11 @@ public class ProjectileSystem : MonoBehaviour
             for (int k = 0; k < targetFinder.visableTargets.Count; k++)
             {
                 Transform potentialTarget = targetFinder.visableTargets[k];
+                //LAZY FIX
+                if (potentialTarget == null)
+                {
+                    break;
+                }
                 if (potentialTarget.CompareTag(targetPriority[i]))
                 {
                     if (newTarget.CompareTag(potentialTarget.gameObject.tag))
@@ -95,7 +116,7 @@ public class ProjectileSystem : MonoBehaviour
             }
         }
 
-        Debug.Log("New Tower Target: " + newTarget.tag);
+        //Debug.Log("New Tower Target: " + newTarget.tag);
         return newTarget;
     }
     private Transform FindCloser(Transform t1, Transform t2)

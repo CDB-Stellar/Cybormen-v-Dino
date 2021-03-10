@@ -37,4 +37,8 @@ public class GameEvents : MonoBehaviour
             e.CanBuild = false;
         }
     }
+    public void WinGame()
+    {
+
+    }
 }

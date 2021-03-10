@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-public class ObjectHealth : MonoBehaviour
+public class CybormenHealth : MonoBehaviour
 {
     public GameObject healthBarPrefab;
     public bool startActive;
@@ -22,7 +22,8 @@ public class ObjectHealth : MonoBehaviour
     {
         if (startActive)
         {
-            healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();         
+            healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();
+            Debug.Log(healthBar);
         }
     }
     private void Start()
@@ -65,7 +66,7 @@ public class ObjectHealth : MonoBehaviour
 
         isDead = true;
 
-        FindObjectOfType<AudioManager>().Play("FirstImpact");
+        FindObjectOfType<AudioManager>().Play("HUMD");
         gameObject.layer = 0;
 
         //Disable all scripts attached to this gameObject other than this one
@@ -73,7 +74,7 @@ public class ObjectHealth : MonoBehaviour
         foreach (MonoBehaviour script in attachedScripts)        
             if (!script.Equals(this)) script.enabled = false;       
 
-        // Diable NavMeshAgent if one Existsp
+        // Diable NavMeshAgent if one Exists
         NavMeshAgent navAgent;
         if (TryGetComponent(out navAgent)) navAgent.enabled = false;
     }

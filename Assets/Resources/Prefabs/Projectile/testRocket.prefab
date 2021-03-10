@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootDir: {x: -0.83076996, y: 0, z: 0.5566159}
   moveSpeed: 15
+  target: {fileID: 0}

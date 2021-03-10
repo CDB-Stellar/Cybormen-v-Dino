@@ -65,7 +65,6 @@ public class CybermanController : MonoBehaviour
         navAgent.SetDestination(CurrentTask.TaskLocation.position);
         if (NavAgentArrived())
         {
-            Debug.Log("Cyberman arrived at " + CurrentTask.TaskLocation.position);
             anim.SetBool("isWorking", true);
             return CybermanState.DoingTask;
         }

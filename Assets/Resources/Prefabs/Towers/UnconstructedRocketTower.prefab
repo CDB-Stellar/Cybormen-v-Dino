@@ -94,12 +94,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4533961811730721909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d1bbef219672449897eac260e90617, type: 3}
+  m_Script: {fileID: 11500000, guid: b9524100dc58d4a46861b048675218fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingLayer: 6
   buildTime: 5
-  riseRate: 0.2
+  riseRate: 0.1
   building: {fileID: 1198210906247430810}
 --- !u!114 &7906883935061012818
 MonoBehaviour:

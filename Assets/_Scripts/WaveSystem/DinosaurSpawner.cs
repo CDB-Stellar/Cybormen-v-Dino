@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class DinosaurSpawner : MonoBehaviour
@@ -19,7 +20,6 @@ public class DinosaurSpawner : MonoBehaviour
     void FixedUpdate()
     {
         currentTime = (float)Math.Round(Time.time, 2);
-        Debug.Log(currentTime);
         if (currentWave != null && currentTime != 0)
         {
             foreach (DinoSpawn data in currentWave.waveContents)
@@ -43,7 +43,7 @@ public class DinosaurSpawner : MonoBehaviour
                     //Check all dinosaurs are dead
                     if (NoAliveDinosaurs())
                     {
-                        // Congrats you win
+                        // Congrats you win                        
                     }
                 }
                 else

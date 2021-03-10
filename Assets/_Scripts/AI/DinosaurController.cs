@@ -151,4 +151,14 @@ public class DinosaurController : MonoBehaviour
         if (Vector3.Distance(t1.position, transform.position) < Vector3.Distance(t2.position, transform.position)) return t1;
         else return t2;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Spear"))        
+            health.TakeDamage(20);
+        else if (collision.gameObject.CompareTag("Rocket"))
+            health.TakeDamage(45);
+        else if (collision.gameObject.CompareTag("RockShell"))
+            health.TakeDamage(100);
+    }
 }
