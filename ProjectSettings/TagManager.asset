@@ -17,6 +17,7 @@ TagManager:
   - Spear
   - Rocket
   - RockShell
+  - uncontructed
   layers:
   - Default
   - TransparentFX

@@ -5,20 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class BuildRequestArgs : EventArgs
+public class BuildRequestArgs : PlayerResourceEventArgs
 {
     public bool CanBuild { get; set; }
-    public float WoodCost { get; }
-    public float StoneCost { get; }
-    public float IronCost { get; }
-    public float ElectronicsCost { get; }
-
-    public BuildRequestArgs(float woodCost, float stoneCost, float ironCost, float electronicsCost) 
+    public BuildRequestArgs(float woodCost, float stoneCost, float ironCost, float electronicsCost) : base(woodCost, stoneCost, ironCost, electronicsCost)
     {
-        WoodCost = woodCost;
-        StoneCost = stoneCost;
-        IronCost = ironCost;
-        ElectronicsCost = electronicsCost;
+        ;
     }
 }
 

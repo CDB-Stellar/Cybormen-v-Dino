@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8421018530643592480}
   - component: {fileID: 5996966170185347562}
   - component: {fileID: 4774432509613797259}
+  - component: {fileID: 200603677372719600}
   m_Layer: 0
   m_Name: FactoryBluePrint
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MonoBehaviour:
   detectionCubeOffset: {x: 0.94, y: 0, z: 0.28}
   green: {fileID: 2100000, guid: 35e73e20b2b06b4438d53b9e257d687e, type: 2}
   red: {fileID: 2100000, guid: bacbac3031469a445a1ed91ecf4efb24, type: 2}
+--- !u!114 &200603677372719600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204327756841685055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 10
+  stone: 10
+  iron: 15
+  electronics: 0

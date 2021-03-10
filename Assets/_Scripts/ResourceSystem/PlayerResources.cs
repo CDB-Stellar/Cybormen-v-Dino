@@ -11,26 +11,13 @@ public class PlayerResources : MonoBehaviour
 
     public void Start()
     {
-        GameEvents.current.OnIncrementResource += HarvestResources;
+        GameEvents.current.OnIncrementResource += IncrementResources;
     }
-    private void HarvestResources(ResourceType resource, float amount)
+    private void IncrementResources(object sender, PlayerResourceEventArgs e)
     {
-        switch (resource)
-        {
-            case ResourceType.Wood:
-                Wood += amount;
-                break;
-            case ResourceType.Stone:
-                Stone += amount;
-                break;
-            case ResourceType.Iron:
-                Iron += amount;
-                break;
-            case ResourceType.Electronics:
-                Electronics += amount;
-                break;
-            default:
-                break;
-        }
+        Wood += e.WoodValue;
+        Stone += e.StoneValue;
+        Iron += e.IronValue;
+        Electronics += e.ElectronicsValue;
     }
 }

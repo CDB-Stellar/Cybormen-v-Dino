@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5562246894308997755
+--- !u!1 &581260019702516440
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5078585625527902401}
-  - component: {fileID: 8202489978680373092}
-  - component: {fileID: 6211007477184535470}
-  - component: {fileID: -6747751912148069023}
+  - component: {fileID: 241747715140161634}
+  - component: {fileID: 3815964854976389063}
+  - component: {fileID: 1374143899939826445}
+  - component: {fileID: -6201575015673859847}
+  - component: {fileID: 444132573351500260}
   m_Layer: 0
-  m_Name: RocketmanBluePrint
+  m_Name: SpearmanBluePrint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5078585625527902401
+--- !u!4 &241747715140161634
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562246894308997755}
+  m_GameObject: {fileID: 581260019702516440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
@@ -33,21 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8202489978680373092
+--- !u!33 &3815964854976389063
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562246894308997755}
-  m_Mesh: {fileID: -5495902117074765545, guid: c3ea718f3e13b16448de715e87dcb46e, type: 3}
---- !u!23 &6211007477184535470
+  m_GameObject: {fileID: 581260019702516440}
+  m_Mesh: {fileID: -5495902117074765545, guid: 7be38415e3672144da11ca88f350c868, type: 3}
+--- !u!23 &1374143899939826445
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562246894308997755}
+  m_GameObject: {fileID: 581260019702516440}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,19 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6747751912148069023
+--- !u!114 &-6201575015673859847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562246894308997755}
+  m_GameObject: {fileID: 581260019702516440}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01a5b8f3745133f418b6d9c02ba66ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4533961811730721909, guid: 8a1c85b450f463a4195098cdeec9ed52, type: 3}
+  prefab: {fileID: 1588785107471454279, guid: 7e147c2642ffebe429384288d7b784bd, type: 3}
   placeLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -102,7 +103,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32759
   cameraName: Camera
-  detectionCubeSize: {x: 2, y: 3.5, z: 2}
+  detectionCubeSize: {x: 1.5, y: 3, z: 1.5}
   detectionCubeOffset: {x: 0, y: 0, z: 0}
   green: {fileID: 2100000, guid: 35e73e20b2b06b4438d53b9e257d687e, type: 2}
   red: {fileID: 2100000, guid: bacbac3031469a445a1ed91ecf4efb24, type: 2}
+--- !u!114 &444132573351500260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581260019702516440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 15
+  stone: 0
+  iron: 0
+  electronics: 0

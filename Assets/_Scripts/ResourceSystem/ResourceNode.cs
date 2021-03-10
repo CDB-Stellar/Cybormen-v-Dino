@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour, IWorkable
 {
-    public ResourceType nodeType;
+   
     public float workTime;
-    public float harvestAmount;
+    public bool usesDurability;
 
     private ObjectHealth health;
+    private ResourceAmounts resources;
+    private PlayerResourceEventArgs e;
     private void Awake()
     {
         health = GetComponent<ObjectHealth>();
+        resources = GetComponent<ResourceAmounts>();
     }
     private void Start()
     {
-        ;
+        e = new PlayerResourceEventArgs(resources.wood, resources.stone, resources.iron, resources.electronics);
     }
     public bool DoWork(float currentTime)
     {
         if (currentTime >= workTime)
         {
-            GameEvents.current.IncrementResource(nodeType, harvestAmount);
-            if (nodeType != ResourceType.Electronics) health.TakeDamage(1);
+            GameEvents.current.IncrementResource(this, e);
+            if (usesDurability) health.TakeDamage(1);
             return true;
         }
         else

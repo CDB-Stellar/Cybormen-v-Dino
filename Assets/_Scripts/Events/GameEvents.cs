@@ -12,23 +12,20 @@ public class GameEvents : MonoBehaviour
     }
 
     public EventHandler<BuildRequestArgs> OnBuildRequest;
-    public Action<ResourceType, float> OnIncrementResource;
+    public EventHandler<PlayerResourceEventArgs> OnIncrementResource;
     
-    public void IncrementResource(ResourceType resource, float amount)
+    public void IncrementResource(object sender, PlayerResourceEventArgs e)
     {
-        OnIncrementResource?.Invoke(resource, amount);
+        OnIncrementResource?.Invoke(this, e);
     }
     public void CanBuildRequest(object sender, BuildRequestArgs e)
     {
-        if (PlayerResources.Wood >= e.WoodCost && PlayerResources.Stone >= e.StoneCost && PlayerResources.Iron >= e.IronCost && PlayerResources.Electronics >= e.ElectronicsCost)
+        if (PlayerResources.Wood >= e.WoodValue &&
+            PlayerResources.Stone >= e.StoneValue &&
+            PlayerResources.Iron >= e.IronValue &&
+            PlayerResources.Electronics >= e.ElectronicsValue)
         {
             Debug.Log("Build Request Event says enough resources");
-
-            IncrementResource(ResourceType.Wood, -e.WoodCost);
-            IncrementResource(ResourceType.Stone, -e.StoneCost);
-            IncrementResource(ResourceType.Iron, -e.IronCost);
-            IncrementResource(ResourceType.Electronics, -e.ElectronicsCost);
-
             e.CanBuild = true;
         }
         else
