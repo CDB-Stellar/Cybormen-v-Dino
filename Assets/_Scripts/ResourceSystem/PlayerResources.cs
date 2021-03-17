@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
-    public static float Wood;
-    public static float Stone;
-    public static float Iron;
-    public static float Electronics;
+    public static int Wood;
+    public static int Stone;
+    public static int Iron;
+    public static int Electronics;
 
     public void Start()
     {

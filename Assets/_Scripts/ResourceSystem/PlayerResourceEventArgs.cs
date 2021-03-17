@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 public class PlayerResourceEventArgs
 {
-    public float WoodValue { get; }
-    public float StoneValue { get; }
-    public float IronValue { get; }
-    public float ElectronicsValue { get; }
-    public PlayerResourceEventArgs(float woodCost, float stoneCost, float ironCost, float electronicsCost)
+    public int WoodValue { get; }
+    public int StoneValue { get; }
+    public int IronValue { get; }
+    public int ElectronicsValue { get; }
+    public PlayerResourceEventArgs(int woodCost, int stoneCost, int ironCost, int electronicsCost)
     {
         WoodValue = woodCost;
         StoneValue = stoneCost;

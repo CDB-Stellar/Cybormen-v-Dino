@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ResourceAmounts : MonoBehaviour
 {
-    public float wood;
-    public float stone;
-    public float iron;
-    public float electronics;
+    public int wood;
+    public int stone;
+    public int iron;
+    public int electronics;
 }

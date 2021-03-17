@@ -16,7 +16,8 @@ public class CybermanNetwork : MonoBehaviour
     {
         StartCoroutine("FindCybermanWithDealy", 0.5f);
 
-        CybermanEvents.current.QueueTask += EnqueueTask;
+        CybermanEvents.current.OnQueueTask += EnqueueTask;
+        CybermanEvents.current.OnClearTasks += ClearTasks;
     }
     
     private void Update()
@@ -61,6 +62,11 @@ public class CybermanNetwork : MonoBehaviour
             Debug.LogWarning("To many Tasks Queued");
         }
         
+    }
+    private void ClearTasks(object sender, EventArgs e)
+    {
+        NotificationManager.current.SetNewNotifcation("Tasks Cleared");
+        TaskBuffer.Clear();
     }
     private IEnumerator FindCybermanWithDealy(float delay)
     {
