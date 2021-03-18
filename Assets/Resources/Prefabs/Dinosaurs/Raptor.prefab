@@ -232,6 +232,9 @@ MonoBehaviour:
   - Village
   stopDis: 0.2
   damage: 1
+  spearDamage: 25
+  rocketDamage: 50
+  rockDamage: 10
 --- !u!114 &1356306405393249803
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class ObjectClicker : MonoBehaviour
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100f, clickableMask))
             {
-                Debug.Log("Clicked on " + hit.collider.gameObject.name);
+                NotificationManager.current.SetNewNotifcation("Added Task to queue");
                 IWorkable task = hit.collider.gameObject.GetComponent<IWorkable>();
                 CybermanEvents.current.EnqueueTask(new CybermanTask(hit.transform, task));
             } 

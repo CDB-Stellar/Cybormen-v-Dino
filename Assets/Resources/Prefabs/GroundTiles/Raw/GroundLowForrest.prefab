@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4873817804211327096}
   - component: {fileID: 7225937854020281522}
   - component: {fileID: 6657147494012735038}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GroundLowForrest
   m_TagString: Untagged
   m_Icon: {fileID: 0}

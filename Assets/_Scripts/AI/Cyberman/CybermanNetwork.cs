@@ -59,7 +59,7 @@ public class CybermanNetwork : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("To many Tasks Queued");
+            NotificationManager.current.SetNewNotifcation("To Many tasks queued");
         }
         
     }

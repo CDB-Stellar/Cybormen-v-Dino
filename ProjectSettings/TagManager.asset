@@ -30,9 +30,9 @@ TagManager:
   - Factory
   - Resource
   - Projectile
-  - BEnemy
-  - MEnemy
-  - SEnemy
+  - 
+  - 
+  - 
   - Enemy
   - Ground
   - 

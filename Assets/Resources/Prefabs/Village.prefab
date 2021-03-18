@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3684633965899079198}
   - component: {fileID: 3684633965899079199}
+  - component: {fileID: 1785873767}
   m_Layer: 0
   m_Name: Village
   m_TagString: Village
@@ -47,7 +48,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619ddf99cb88a314e83d1aaf20c90ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
+  radius: 10
+--- !u!114 &1785873767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684633965899079192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c917310f60598cb478e214991c4a9b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3093115897816071060
 PrefabInstance:
   m_ObjectHideFlags: 0

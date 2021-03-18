@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEvents : MonoBehaviour
 {
     public static GameEvents current;
+
+    public EndData endData; 
     private void Awake()
     {
         current = this;
@@ -54,8 +57,16 @@ public class GameEvents : MonoBehaviour
             NotificationManager.current.SetNewNotifcation(notification);
         }
     }
-    public void WinGame()
-    {
-
+    public void EndGame(bool isWin)
+    {        
+        if (isWin)
+        {
+            endData.gameOverMsg = "You are Victorious";
+        }
+        else
+        {
+            endData.gameOverMsg = "Your a fucking loser";
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -16461,42 +16461,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3684633965899079199, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105159059894153, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105159059894153, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105160143934524, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105160143934524, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105161108474287, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105161108474287, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105161116897667, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687105161116897667, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
 --- !u!1001 &478841297
@@ -54637,6 +54601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1047393460449585441, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: endData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e4c1157b943d6546a11813f6717f356, type: 2}
     - target: {fileID: 1047393462272086176, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
       propertyPath: m_Name
       value: GameSystems
@@ -54907,6 +54875,10 @@ PrefabInstance:
     - target: {fileID: 7281490600052206220, guid: 5ef3c118f5a28bd45803fc1034202fb3, type: 3}
       propertyPath: Waves.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281490600052206220, guid: 5ef3c118f5a28bd45803fc1034202fb3, type: 3}
+      propertyPath: dinosaurs.m_Bits
+      value: 16384
       objectReference: {fileID: 0}
     - target: {fileID: 7281490600052206220, guid: 5ef3c118f5a28bd45803fc1034202fb3, type: 3}
       propertyPath: Waves.Array.data[0].waveTime

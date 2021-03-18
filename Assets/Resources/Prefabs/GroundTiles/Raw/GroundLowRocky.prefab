@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5045122429234099701}
   - component: {fileID: 7054633005486850367}
   - component: {fileID: 6467827917369240499}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GroundLowRocky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
