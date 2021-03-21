@@ -20,11 +20,13 @@ public class UnplacedBuilding : MonoBehaviour
     private RaycastHit hit;
     private bool canPlace;
     private Vector3 boxCastPosition;
+    private ResourceAmounts constructionCost;
 
     private void Awake()
     {
         meshs = GetAllMeshesInPrefab();
         camera = GameObject.Find(cameraName).GetComponent<Camera>();
+        constructionCost = GetComponent<ResourceAmounts>();
         
         boxCastPosition = new Vector3(transform.position.x + detectionCubeOffset.x,
             transform.position.y + detectionCubeOffset.y + detectionCubeSize.y / 2,
@@ -52,6 +54,9 @@ public class UnplacedBuilding : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && canPlace)
         {
+            PlayerResourceEventArgs resourceCost = new PlayerResourceEventArgs(-constructionCost.wood, -constructionCost.stone, -constructionCost.iron, -constructionCost.electronics);
+            GameEvents.current.OnIncrementResource(this, resourceCost);
+            
             Instantiate(prefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

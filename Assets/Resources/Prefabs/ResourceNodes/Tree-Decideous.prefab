@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 990919654187932495}
   - component: {fileID: 3537042818723057393}
   - component: {fileID: 2486527694671201943}
+  - component: {fileID: -4785137601142332733}
   m_Layer: 9
   m_Name: Tree-Decideous
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456153939583742886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,9 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875d1706df23e3d45b6fa48c40d4da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeType: 0
-  workTime: 4
-  harvestAmount: 10
+  workTime: 2
+  usesDurability: 1
 --- !u!114 &2486527694671201943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +144,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 6452645047587875098, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
-  startActive: 1
+  startActive: 0
   maxHealth: 2
   GUIOffset: {x: 0, y: 2, z: 0}
   descendRate: 0.05
   destroyHeight: -2
+--- !u!114 &-4785137601142332733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456153939583742886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 5
+  stone: 0
+  iron: 0
+  electronics: 0

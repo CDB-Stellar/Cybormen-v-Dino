@@ -14,6 +14,7 @@ public class CybermanController : MonoBehaviour
     private Transform Village;
     private NavMeshAgent navAgent;
     private Animator anim;
+    private ObjectHealth health;
 
     private float workTimer;
 
@@ -28,6 +29,7 @@ public class CybermanController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<ObjectHealth>();
     }
     private void Start()
     {
@@ -89,6 +91,10 @@ public class CybermanController : MonoBehaviour
         }
         else
         {
+            if (CheckForDeath() && CurrentTask.TaskLocation.gameObject.CompareTag("uncontructed"))
+            {                
+                CybermanEvents.current.EnqueueTask(CurrentTask);
+            }
             return CybermanState.DoingTask;
         }
     }
@@ -115,6 +121,10 @@ public class CybermanController : MonoBehaviour
         CurrentTask = newTask;
         currentState = CybermanState.MovingToTask;
         anim.SetBool("isMoving", true);
+    }
+    private bool CheckForDeath()
+    {
+        return health.CurrentHealth <= 0;
     }
 
 

@@ -10,6 +10,11 @@ public class DinosaurController : MonoBehaviour
     public float stopDis;
     public int damage;
 
+    [Header("Damage Taken")]
+    public int spearDamage;
+    public int rocketDamage;
+    public int rockDamage;
+
     private Animator anim;
     private NavMeshAgent navAgent;
     private TargetFinder targetFinder;
@@ -155,10 +160,10 @@ public class DinosaurController : MonoBehaviour
     {
 
         if (collision.gameObject.CompareTag("Spear"))        
-            health.TakeDamage(20);
+            health.TakeDamage(spearDamage);
         else if (collision.gameObject.CompareTag("Rocket"))
-            health.TakeDamage(45);
+            health.TakeDamage(rocketDamage);
         else if (collision.gameObject.CompareTag("RockShell"))
-            health.TakeDamage(100);
+            health.TakeDamage(rockDamage);
     }
 }

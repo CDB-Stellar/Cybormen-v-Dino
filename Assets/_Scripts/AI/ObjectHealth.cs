@@ -13,10 +13,10 @@ public class ObjectHealth : MonoBehaviour
     [Header("Death Settings")]
     public float descendRate;
     public float destroyHeight;
-    
-   
-    private HealthBar healthBar;
-    private int currentHealth;
+    public int CurrentHealth { get; private set; }
+
+
+    private HealthBar healthBar;    
     private bool isDead;
     private void Awake()
     {
@@ -29,30 +29,29 @@ public class ObjectHealth : MonoBehaviour
     {
         if (startActive)
         {
-            currentHealth = maxHealth;
+            CurrentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(CurrentHealth);
         }
     }   
     public void InitalizeHealthBar()
     {        
         healthBar = healthBar = Instantiate(healthBarPrefab, transform.position + GUIOffset, Quaternion.identity, transform).GetComponentInChildren<HealthBar>();
 
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(CurrentHealth);
     }
     public void TakeDamage(int amount)
     {
         if (!IsActive())
         {
-            Debug.LogError("HealthBar Has not been initalized");
-            return;
+            InitalizeHealthBar();
         }
 
-        currentHealth = (int)Mathf.Max(0f, currentHealth - amount);
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0f)
+        CurrentHealth = (int)Mathf.Max(0f, CurrentHealth - amount);
+        healthBar.SetHealth(CurrentHealth);
+        if (CurrentHealth <= 0f)
             StartDeathSequence();
     }
     private void StartDeathSequence()

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -7181493480345561420}
   - component: {fileID: 8649986463223005502}
   - component: {fileID: 2396188040374926518}
+  - component: {fileID: 783169311577675262}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Building
@@ -127,9 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875d1706df23e3d45b6fa48c40d4da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeType: 3
   workTime: 10
-  harvestAmount: 2
+  usesDurability: 0
 --- !u!114 &8649986463223005502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +161,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+--- !u!114 &783169311577675262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494557327459782922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 0
+  stone: 1
+  iron: 0
+  electronics: 4

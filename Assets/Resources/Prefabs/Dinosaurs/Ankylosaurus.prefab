@@ -912,7 +912,10 @@ MonoBehaviour:
   - Building
   - Village
   stopDis: 2
-  damage: 1
+  damage: 2
+  spearDamage: 5
+  rocketDamage: 20
+  rockDamage: 100
 --- !u!114 &9124104758698066459
 MonoBehaviour:
   m_ObjectHideFlags: 0
