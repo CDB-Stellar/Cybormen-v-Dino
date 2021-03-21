@@ -4,33 +4,20 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
-    public static float Wood;
-    public static float Stone;
-    public static float Iron;
-    public static float Electronics;
+    public static int Wood;
+    public static int Stone;
+    public static int Iron;
+    public static int Electronics;
 
     public void Start()
     {
-        GameEvents.current.OnIncrementResource += HarvestResources;
+        GameEvents.current.OnIncrementResource += IncrementResources;
     }
-    private void HarvestResources(ResourceType resource, float amount)
+    private void IncrementResources(object sender, PlayerResourceEventArgs e)
     {
-        switch (resource)
-        {
-            case ResourceType.Wood:
-                Wood += amount;
-                break;
-            case ResourceType.Stone:
-                Stone += amount;
-                break;
-            case ResourceType.Iron:
-                Iron += amount;
-                break;
-            case ResourceType.Electronics:
-                Electronics += amount;
-                break;
-            default:
-                break;
-        }
+        Wood += e.WoodValue;
+        Stone += e.StoneValue;
+        Iron += e.IronValue;
+        Electronics += e.ElectronicsValue;
     }
 }

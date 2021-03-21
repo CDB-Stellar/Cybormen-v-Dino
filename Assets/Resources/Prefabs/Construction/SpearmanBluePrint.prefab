@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3815964854976389063}
   - component: {fileID: 1374143899939826445}
   - component: {fileID: -6201575015673859847}
+  - component: {fileID: 444132573351500260}
   m_Layer: 0
   m_Name: SpearmanBluePrint
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MonoBehaviour:
   detectionCubeOffset: {x: 0, y: 0, z: 0}
   green: {fileID: 2100000, guid: 35e73e20b2b06b4438d53b9e257d687e, type: 2}
   red: {fileID: 2100000, guid: bacbac3031469a445a1ed91ecf4efb24, type: 2}
+--- !u!114 &444132573351500260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581260019702516440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 20
+  stone: 0
+  iron: 0
+  electronics: 0

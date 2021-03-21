@@ -2,43 +2,71 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEvents : MonoBehaviour
 {
     public static GameEvents current;
+
+    public EndData endData; 
     private void Awake()
     {
         current = this;
     }
 
     public EventHandler<BuildRequestArgs> OnBuildRequest;
-    public Action<ResourceType, float> OnIncrementResource;
+    public EventHandler<PlayerResourceEventArgs> OnIncrementResource;
     
-    public void IncrementResource(ResourceType resource, float amount)
+    public void IncrementResource(object sender, PlayerResourceEventArgs e)
     {
-        OnIncrementResource?.Invoke(resource, amount);
+        OnIncrementResource?.Invoke(this, e);
     }
     public void CanBuildRequest(object sender, BuildRequestArgs e)
     {
-        if (PlayerResources.Wood >= e.WoodCost && PlayerResources.Stone >= e.StoneCost && PlayerResources.Iron >= e.IronCost && PlayerResources.Electronics >= e.ElectronicsCost)
+        int woodNeeded = PlayerResources.Wood - e.WoodValue,
+        stoneNeeded = PlayerResources.Stone - e.StoneValue,
+        ironNeeded = PlayerResources.Iron - e.IronValue,
+        electronicsNeeded = PlayerResources.Electronics - e.ElectronicsValue;
+        string notification = "";        
+
+        if (woodNeeded < 0)
         {
-            Debug.Log("Build Request Event says enough resources");
+            notification += String.Format("Need {0} more Wood.\n", -woodNeeded);
+        }
+        if (stoneNeeded < 0)
+        {
+            notification += String.Format("Need {0} more Stone.\n", -stoneNeeded);
+        } 
+        if(ironNeeded < 0)
+        {
+            notification += String.Format("Need {0} more Iron.\n", -ironNeeded);
+        }
+        if(electronicsNeeded < 0)
+        {
+            notification += String.Format("Need {0} more Electronics.\n", -electronicsNeeded);
+        }
 
-            IncrementResource(ResourceType.Wood, -e.WoodCost);
-            IncrementResource(ResourceType.Stone, -e.StoneCost);
-            IncrementResource(ResourceType.Iron, -e.IronCost);
-            IncrementResource(ResourceType.Electronics, -e.ElectronicsCost);
-
-            e.CanBuild = true;
+        if (notification.Equals(""))
+        {
+            Debug.Log("Build Request Event says enough resources" + ", " + woodNeeded);
+            e.CanBuild = true;                    
         }
         else
         {
-            Debug.Log("Build Request Event says not enough resources");
-            e.CanBuild = false;
+            Debug.Log(notification);
+            NotificationManager.current.SetNewNotifcation(notification);
         }
     }
-    public void WinGame()
-    {
-
+    public void EndGame(bool isWin)
+    {        
+        if (isWin)
+        {
+            endData.gameOverMsg = "You are Victorious";
+        }
+        else
+        {
+            endData.gameOverMsg = "Your a fucking loser";
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

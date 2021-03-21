@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4873817804211327096}
   - component: {fileID: 7225937854020281522}
   - component: {fileID: 6657147494012735038}
-  m_Layer: 0
+  - component: {fileID: 5685071335560647611}
+  m_Layer: 15
   m_Name: GroundLowForrest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,3 +97,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5045735949064619246, guid: 5b571f9b6dc0da340b953da064dda19c, type: 3}
+--- !u!114 &5685071335560647611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171383011361604967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801579102f5791142834c82ae4fe2306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceNodes:
+  - {fileID: 1890818700485260702, guid: c518d5af0b852a040882a38f4159c8de, type: 3}
+  - {fileID: 4456153939583742886, guid: 9069e730cf6ee13468e82280d31245cf, type: 3}
+  resourceSpawnThreshold:
+  - 40
+  - 80

@@ -11,10 +11,15 @@ public class CybermanEvents : MonoBehaviour
         current = this;
     }
 
-    public EventHandler<CybermanTaskEventArgs> QueueTask;
+    public EventHandler<CybermanTaskEventArgs> OnQueueTask;
+    public EventHandler<EventArgs> OnClearTasks;
 
     public void EnqueueTask(CybermanTask cybermanTask)
     {
-        QueueTask?.Invoke(this, new CybermanTaskEventArgs(cybermanTask));
+        OnQueueTask?.Invoke(this, new CybermanTaskEventArgs(cybermanTask));
+    }
+    public void ClearTasks()
+    {
+        OnClearTasks?.Invoke(this, new EventArgs());
     }
 }

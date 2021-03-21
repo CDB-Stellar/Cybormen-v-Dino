@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class DinosaurSpawner : MonoBehaviour
 {    
     [Header("Wave Data")]
+    public LayerMask dinosaurs;
     public List<DinosaurWave> Waves;
 
     private float currentTime = 0f;
     private List<Transform> AliveDinosaurs;
     private DinosaurWave currentWave;
     private int waveIndex = 0;
+    private bool finished;
     void Start()
     {
         currentWave = Waves[waveIndex];
@@ -37,14 +39,12 @@ public class DinosaurSpawner : MonoBehaviour
             //if wave is done go to next wave
             if (currentTime % currentWave.waveTime <= 0.01f)
             {
+                Debug.Log("Finished game = " + (waveIndex == Waves.Count - 1));
                 if (waveIndex == Waves.Count - 1)
                 {
+                    Debug.Log("Game over with victory");
                     currentWave = null;
-                    //Check all dinosaurs are dead
-                    if (NoAliveDinosaurs())
-                    {
-                        // Congrats you win                        
-                    }
+                    finished = true;                    
                 }
                 else
                 {
@@ -53,10 +53,14 @@ public class DinosaurSpawner : MonoBehaviour
                     currentWave = Waves[waveIndex];
                 }
             }
-        }        
+        }
+        if (finished && NoAliveDinosaurs())
+        {
+            GameEvents.current.EndGame(true);
+        }
     }
     private bool NoAliveDinosaurs()
     {
-        return !(Physics.OverlapBox(transform.position, new Vector3(50f,50f,50f), Quaternion.identity).Length > 0f);
+        return !(Physics.OverlapBox(transform.position, new Vector3(50f,50f,50f), Quaternion.identity, dinosaurs).Length > 0f);
     }
 }

@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 2464278732109055365}
   - component: {fileID: 889447238236947885}
   - component: {fileID: -3528677761963582434}
-  - component: {fileID: 1638176869}
   - component: {fileID: 1638176868}
+  - component: {fileID: 1638176869}
   m_Layer: 0
   m_Name: RocketmanTower
   m_TagString: Tower
@@ -161,6 +161,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
+--- !u!114 &1638176868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509060749848512929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aad032cfd59bd347a089d4c74526cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visableTargets: []
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  viewRadius: 15
 --- !u!114 &1638176869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,28 +202,8 @@ MonoBehaviour:
   rotationBit: {fileID: 3537463977953967102}
   targetPriority:
   - BEnemy
-  - MEnemy
   - SEnemy
---- !u!114 &1638176868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5509060749848512929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aad032cfd59bd347a089d4c74526cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visableTargets: []
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 16384
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  viewRadius: 15
+  - MEnemy
 --- !u!1001 &860284079
 PrefabInstance:
   m_ObjectHideFlags: 0
