@@ -121,5 +121,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 10
   stone: 10
-  iron: 15
+  iron: 20
   electronics: 0

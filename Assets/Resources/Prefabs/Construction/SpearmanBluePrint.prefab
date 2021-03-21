@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 15
+  wood: 20
   stone: 0
   iron: 0
   electronics: 0

@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 6452645047587875098, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
-  startActive: 1
-  maxHealth: 5
+  startActive: 0
+  maxHealth: 3
   GUIOffset: {x: 0, y: 1.5, z: 0}
   descendRate: 0.05
   destroyHeight: -2
@@ -174,6 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wood: 0
-  stone: 10
+  stone: 5
   iron: 0
   electronics: 0

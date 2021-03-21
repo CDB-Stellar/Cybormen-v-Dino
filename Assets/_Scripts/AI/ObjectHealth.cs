@@ -46,8 +46,7 @@ public class ObjectHealth : MonoBehaviour
     {
         if (!IsActive())
         {
-            Debug.LogError("HealthBar Has not been initalized");
-            return;
+            InitalizeHealthBar();
         }
 
         CurrentHealth = (int)Mathf.Max(0f, CurrentHealth - amount);

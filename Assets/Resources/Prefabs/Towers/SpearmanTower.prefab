@@ -168,8 +168,8 @@ MonoBehaviour:
   towerType: 1
   projectilePrefab: {fileID: 4040659723259326246, guid: c244405fa104746459ed75df75b5caa1, type: 3}
   shootFrom: {fileID: 9135756802045525454}
-  fireRate: 0.8
-  moveSpeed: 15
+  fireRate: 0.6
+  moveSpeed: 20
   rotationBit: {fileID: 3537463976927084952}
   targetPriority:
   - BEnemy

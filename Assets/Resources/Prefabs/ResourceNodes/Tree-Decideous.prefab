@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875d1706df23e3d45b6fa48c40d4da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workTime: 4
+  workTime: 2
   usesDurability: 1
 --- !u!114 &2486527694671201943
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 6452645047587875098, guid: 8d8da341a550d614aa0c5d90ae52f9ac, type: 3}
-  startActive: 1
+  startActive: 0
   maxHealth: 2
   GUIOffset: {x: 0, y: 2, z: 0}
   descendRate: 0.05
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc7fce2b24a11145af213aa449f73bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 10
+  wood: 5
   stone: 0
   iron: 0
   electronics: 0

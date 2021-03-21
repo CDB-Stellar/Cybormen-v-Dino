@@ -913,8 +913,8 @@ MonoBehaviour:
   - Village
   stopDis: 2
   damage: 2
-  spearDamage: 20
-  rocketDamage: 45
+  spearDamage: 5
+  rocketDamage: 20
   rockDamage: 100
 --- !u!114 &9124104758698066459
 MonoBehaviour:

@@ -122,8 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 5
   stone: 10
-  iron: 10
-  electronics: 10
+  iron: 15
+  electronics: 12
 --- !u!1 &2010910262851505154
 GameObject:
   m_ObjectHideFlags: 0
