@@ -12,6 +12,7 @@ public class UnplacedBuilding : MonoBehaviour
     public Vector3 detectionCubeOffset;
     public Material green;
     public Material red;
+    
 
     private MeshRenderer[] meshs;
     private new Camera camera; 
@@ -20,7 +21,6 @@ public class UnplacedBuilding : MonoBehaviour
     private bool canPlace;
     private Vector3 boxCastPosition;
     private ResourceAmounts constructionCost;
-    private Transform parent;
 
     private void Awake()
     {
@@ -32,13 +32,6 @@ public class UnplacedBuilding : MonoBehaviour
             transform.position.y + detectionCubeOffset.y + detectionCubeSize.y / 2,
             transform.position.z + detectionCubeOffset.y);
 
-
-        parent = camera.transform.parent;
-    }
-    private void Start()
-    {
-        GameEvents.current.OnPlaceBuilding += PlaceDownBuilding;
-        GameEvents.current.OnCancelBuilding += CancelUnplacedBuilding;
     }
     // Update is called once per frame
     void Update()
@@ -54,27 +47,23 @@ public class UnplacedBuilding : MonoBehaviour
             canPlace = true;
         }
 
-        //Ray ray = camera.ScreenPointToRay(transform.localPosition);
-        //if (Physics.Raycast(ray, out hit, 5000000.0f, placeLayer))
-        //{
-        //    transform.position = new Vector3(Mathf.RoundToInt(hit.point.x), Mathf.RoundToInt(hit.point.y), Mathf.RoundToInt(hit.point.z));
-        //}
-        transform.position = new Vector3(Mathf.Round(parent.position.x), Mathf.Round(parent.position.y), Mathf.Round(parent.position.z));        
-    }
-    private void PlaceDownBuilding()
-    {
-        if (canPlace)
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 5000000.0f, placeLayer))
+        {
+            transform.position = new Vector3(Mathf.RoundToInt(hit.point.x), Mathf.RoundToInt(hit.point.y), Mathf.RoundToInt(hit.point.z));
+        }
+        if (Input.GetMouseButtonDown(0) && canPlace)
         {
             PlayerResourceEventArgs resourceCost = new PlayerResourceEventArgs(-constructionCost.wood, -constructionCost.stone, -constructionCost.iron, -constructionCost.electronics);
             GameEvents.current.OnIncrementResource(this, resourceCost);
-
+            
             Instantiate(prefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
-        }        
-    }
-    private void CancelUnplacedBuilding()
-    {
-        Destroy(gameObject);
+        }
+        else if(Input.GetMouseButtonDown(1))
+        {
+            Destroy(gameObject);
+        }
     }
     private bool IsColliding()
     {
@@ -100,12 +89,5 @@ public class UnplacedBuilding : MonoBehaviour
         Gizmos.DrawWireCube(new Vector3(transform.position.x + detectionCubeOffset.x,
             transform.position.y + detectionCubeOffset.y + detectionCubeSize.y / 2,
             transform.position.z + detectionCubeOffset.z), detectionCubeSize);
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(camera.ScreenPointToRay(new Vector3(0f, 0f, 1f)));
-    }
-    private void OnDestroy()
-    {
-        GameEvents.current.OnPlaceBuilding -= PlaceDownBuilding;
-        GameEvents.current.OnCancelBuilding -= CancelUnplacedBuilding;
     }
 }

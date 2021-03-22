@@ -16,7 +16,6 @@ public class GameEvents : MonoBehaviour
 
     public EventHandler<BuildRequestArgs> OnBuildRequest;
     public EventHandler<PlayerResourceEventArgs> OnIncrementResource;
-    public Action OnPlaceBuilding, OnCancelBuilding;
     
     public void IncrementResource(object sender, PlayerResourceEventArgs e)
     {
@@ -57,14 +56,6 @@ public class GameEvents : MonoBehaviour
             Debug.Log(notification);
             NotificationManager.current.SetNewNotifcation(notification);
         }
-    }
-    public void PlaceBuilding()
-    {
-        OnPlaceBuilding?.Invoke();
-    }
-    public void CancelBuilding()
-    {
-        OnCancelBuilding?.Invoke();
     }
     public void EndGame(bool isWin)
     {        
