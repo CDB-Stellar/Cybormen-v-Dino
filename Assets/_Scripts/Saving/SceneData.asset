@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc0f05f1cab71443b8917af1a379a11, type: 3}
   m_Name: SceneData
   m_EditorClassIdentifier: 
-  playerPosition: {x: 1.9674397, y: 0, z: 4.7002053}
-  house1: 1000
-  house2: 22
+  playerPosition: {x: 0.41446498, y: 0, z: -9.537845}
+  house1: 1
+  house2: 1
   house3: 1000
-  house4: 308
+  house4: 1000
   wood: 0
   rock: 0
   iron: 0

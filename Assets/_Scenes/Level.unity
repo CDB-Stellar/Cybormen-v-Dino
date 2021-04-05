@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 696038208}
-  house1: {fileID: 0}
+  house1: {fileID: 1617776545}
   house2: {fileID: 476644832}
   house3: {fileID: 476644831}
   house4: {fileID: 476644830}
@@ -6487,6 +6487,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectBluePrint: {fileID: 581260019702516440, guid: 0c18d1771a8ca284d9faa8bbeb8b3688, type: 3}
+--- !u!114 &1617776545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3684633965346423352, guid: ccc6e40661b89f14c8086c3c74c3dba8, type: 3}
+  m_PrefabInstance: {fileID: 476644829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a52e6d144bc1fd43b29d2d4a47ffbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1675935229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2144847759524364605, guid: a611e6aee9be0aa4dae63619ff8c9a56, type: 3}

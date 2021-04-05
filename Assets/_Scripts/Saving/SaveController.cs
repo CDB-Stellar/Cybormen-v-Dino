@@ -8,7 +8,7 @@ public class SaveController : MonoBehaviour
     public CameraController player;
 
     [Header("Village")]
-    public GameObject house1;
+    public ObjectHealth house1;
     public ObjectHealth house2;
     public ObjectHealth house3;
     public ObjectHealth house4;
@@ -19,6 +19,12 @@ public class SaveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<CameraController>();
+        house1 = GameObject.Find("House").GetComponent<ObjectHealth>();
+        house2 = GameObject.Find("House (1)").GetComponent<ObjectHealth>();
+        house3 = GameObject.Find("House (2)").GetComponent<ObjectHealth>();
+        house4 = GameObject.Find("House (3)").GetComponent<ObjectHealth>();
+
         LoadFromPlayerPrefs();
     }
 
@@ -36,10 +42,16 @@ public class SaveController : MonoBehaviour
         player.transform.position = sceneData.playerPosition; //load player camera position
 
         // Load Village Health
-        house1.GetComponent<ObjectHealth>().CurrentHealth = sceneData.house1;
+        house1.CurrentHealth = sceneData.house1;
         house2.CurrentHealth = sceneData.house2;
         house3.CurrentHealth = sceneData.house3;
         house4.CurrentHealth = sceneData.house4;
+
+        // Load Resources
+        PlayerResources.Wood = sceneData.wood;
+        PlayerResources.Stone = sceneData.stone;
+        PlayerResources.Iron = sceneData.iron;
+        PlayerResources.Electronics = sceneData.electronics;
     }
 
     public void OnSaveButtonPressed()
@@ -47,10 +59,16 @@ public class SaveController : MonoBehaviour
         sceneData.playerPosition = player.transform.position; //save player camera position
 
         // Save Village Health
-        sceneData.house1 = house1.GetComponent<ObjectHealth>().CurrentHealth;
+        sceneData.house1 = house1.CurrentHealth;
         sceneData.house2 = house2.CurrentHealth;
         sceneData.house3 = house3.CurrentHealth;
         sceneData.house4 = house4.CurrentHealth;
+
+        // Save Resources
+        sceneData.wood = PlayerResources.Wood;
+        sceneData.stone = PlayerResources.Stone;
+        sceneData.iron = PlayerResources.Iron;
+        sceneData.electronics = PlayerResources.Electronics;
 
         SaveToPlayerPrefs();
     }
@@ -70,6 +88,12 @@ public class SaveController : MonoBehaviour
         PlayerPrefs.SetInt("house2Health", sceneData.house2);
         PlayerPrefs.SetInt("house3Health", sceneData.house3);
         PlayerPrefs.SetInt("house4Health", sceneData.house4);
+
+        // Saving Resources
+        PlayerPrefs.SetInt("wood", sceneData.wood);
+        PlayerPrefs.SetInt("stone", sceneData.stone);
+        PlayerPrefs.SetInt("iron", sceneData.iron);
+        PlayerPrefs.SetInt("electronics", sceneData.electronics);
     }
 
     public void LoadFromPlayerPrefs()
@@ -87,5 +111,11 @@ public class SaveController : MonoBehaviour
         sceneData.house2 = PlayerPrefs.GetInt("house2Health");
         sceneData.house3 = PlayerPrefs.GetInt("house3Health");
         sceneData.house4 = PlayerPrefs.GetInt("house4Health");
+
+        // Loading Resources
+        sceneData.wood = PlayerPrefs.GetInt("wood");
+        sceneData.stone = PlayerPrefs.GetInt("stone");
+        sceneData.iron = PlayerPrefs.GetInt("iron");
+        sceneData.electronics = PlayerPrefs.GetInt("electronics");
     }
 }

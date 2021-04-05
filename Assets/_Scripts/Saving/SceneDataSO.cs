@@ -7,18 +7,18 @@ using UnityEngine;
 public class SceneDataSO : ScriptableObject
 {
     // Player Data
-    [Header("Player Data")]
+    [Header("Player Camera Position")]
     public Vector3 playerPosition;
     // Village
-    [Header("Village")]
+    [Header("Village Health")]
     public int house1;
     public int house2;
     public int house3;
     public int house4;
     // Resources
-    [Header("Resources")]
+    [Header("Resource Counts")]
     public int wood;
-    public int rock;
+    public int stone;
     public int iron;
     public int electronics;
     // Towers
