@@ -5,9 +5,9 @@ using UnityEngine;
 public class SaveController : MonoBehaviour
 {
     [Header("Player(Camera)")]
-    public CameraController player;
+    public CameraController player; //save player camera position
 
-    [Header("Village")]
+    [Header("Village")] //save the village health
     public ObjectHealth house1;
     public ObjectHealth house2;
     public ObjectHealth house3;
@@ -15,6 +15,8 @@ public class SaveController : MonoBehaviour
 
     [Header("Scene Data")]
     public SceneDataSO sceneData;
+
+    List<GameObject> currentDinos = new List<GameObject>(); //the transforms of all current dinos, to save where they are
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,17 @@ public class SaveController : MonoBehaviour
         PlayerResources.Stone = sceneData.stone;
         PlayerResources.Iron = sceneData.iron;
         PlayerResources.Electronics = sceneData.electronics;
+
+        // Load Dino Positions
+        //currentDinos.Clear();
+        //FindAllCurrentDinos(); //adds all current dinos to the currentDinos list
+        //foreach (GameObject dino in currentDinos) //delete existing dinos
+        //    Destroy(dino);
+
+        //foreach (GameObject dino in sceneData.currentDinos) //bring back dinos from saved list
+        //{
+        //    Instantiate(dino); //this is wrong
+        //}
     }
 
     public void OnSaveButtonPressed()
@@ -69,6 +82,18 @@ public class SaveController : MonoBehaviour
         sceneData.stone = PlayerResources.Stone;
         sceneData.iron = PlayerResources.Iron;
         sceneData.electronics = PlayerResources.Electronics;
+
+        // Save Dino Positions
+        currentDinos.Clear();
+        FindAllCurrentDinos(); //adds current dinos to the currentDinos list
+        sceneData.currentDinos.Clear(); //empty it out in case there was a previous save
+        foreach (GameObject dino in currentDinos) //add everything from currentDinos to sceneData.currentDinos
+            sceneData.currentDinos.Add(dino);
+
+        //// Save with JSON?
+        //string[] saveDataString = new string[];
+        //foreach (GameObject dino in sceneData.currentDinos)
+        //sceneData.currentDinos.Add(dino);
 
         SaveToPlayerPrefs();
     }
@@ -117,5 +142,28 @@ public class SaveController : MonoBehaviour
         sceneData.stone = PlayerPrefs.GetInt("stone");
         sceneData.iron = PlayerPrefs.GetInt("iron");
         sceneData.electronics = PlayerPrefs.GetInt("electronics");
+    }
+
+    void FindAllCurrentDinos()
+    {
+        // Find all active dinos and add them to the currentDinos list
+        if (GameObject.FindGameObjectWithTag("MEnemy") != null)
+        {
+            GameObject[] mediumDinos = GameObject.FindGameObjectsWithTag("MEnemy");
+            for (int i = 0; i < mediumDinos.Length; i++)
+                currentDinos.Add(mediumDinos[i]);
+        }
+        if (GameObject.FindGameObjectWithTag("SEnemy") != null)
+        {
+            GameObject[] smallDinos = GameObject.FindGameObjectsWithTag("SEnemy");
+            for (int i = 0; i < smallDinos.Length; i++)
+                currentDinos.Add(smallDinos[i]);
+        }
+        if (GameObject.FindGameObjectWithTag("BEnemy") != null)
+        {
+            GameObject[] bigDinos = GameObject.FindGameObjectsWithTag("BEnemy");
+            for (int i = 0; i < bigDinos.Length; i++)
+                currentDinos.Add(bigDinos[i]);
+        }
     }
 }
