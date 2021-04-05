@@ -62,8 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centreSize: 3
-  xOffset: 56
-  yOffset: -89
+  noiseLocation: {fileID: 11400000, guid: e574f1f8fd3a3044bb9e9de1e3c59c84, type: 2}
   scale: 5
   width: 60
   height: 60

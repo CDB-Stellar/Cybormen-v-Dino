@@ -17,6 +17,7 @@ public class GameEvents : MonoBehaviour
     public EventHandler<BuildRequestArgs> OnBuildRequest;
     public EventHandler<PlayerResourceEventArgs> OnIncrementResource;
     public Action OnPlaceBuilding, OnCancelBuilding;
+    public Action OnEndGame;
     
     public void IncrementResource(object sender, PlayerResourceEventArgs e)
     {
@@ -74,8 +75,10 @@ public class GameEvents : MonoBehaviour
         }
         else
         {
-            endData.gameOverMsg = "The Village has Crumbled...";
+            endData.gameOverMsg = "The Village has Crumbled...\nYou Lose";
         }
+        OnEndGame?.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

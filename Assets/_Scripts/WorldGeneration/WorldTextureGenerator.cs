@@ -5,9 +5,7 @@ using UnityEngine;
 public class WorldTextureGenerator : MonoBehaviour
 {
     public int centreSize = 10;
-
-    public int xOffset = 0;
-    public int yOffset = 0;
+    public WorldData noiseLocation;
     public float scale = 5f;
     public int width = 100;
     public int height = 100;
@@ -33,8 +31,8 @@ public class WorldTextureGenerator : MonoBehaviour
     }
     private Color CalculateColour(int x, int y)
     {
-        float xCoord = (float)(x + xOffset) / (width) * scale;
-        float yCoord = (float)(y + yOffset) / (height) * scale;
+        float xCoord = (float)(x + noiseLocation.XPos) / (width) * scale;
+        float yCoord = (float)(y + noiseLocation.YPos) / (height) * scale;
 
         float sample = Mathf.PerlinNoise(xCoord, yCoord);
 
