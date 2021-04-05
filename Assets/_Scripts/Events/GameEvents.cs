@@ -70,11 +70,11 @@ public class GameEvents : MonoBehaviour
     {        
         if (isWin)
         {
-            endData.gameOverMsg = "You are Victorious";
+            endData.gameOverMsg = "You are Victorious!";
         }
         else
         {
-            endData.gameOverMsg = "Your a fucking loser";
+            endData.gameOverMsg = "The Village has Crumbled...";
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

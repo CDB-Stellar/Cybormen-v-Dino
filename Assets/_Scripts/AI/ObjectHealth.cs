@@ -13,7 +13,7 @@ public class ObjectHealth : MonoBehaviour
     [Header("Death Settings")]
     public float descendRate;
     public float destroyHeight;
-    public int CurrentHealth { get; private set; }
+    public int CurrentHealth { get; set; } //change set to public to save village health
 
 
     private HealthBar healthBar;    
