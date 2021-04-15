@@ -8,6 +8,7 @@ public class BuildingTask : MonoBehaviour, IWorkable
     public float buildTime;
     public float riseRate;
     public Transform building;
+    public int questCode;
 
     private ObjectHealth buildingHealth;
     private ProjectileSystem tower = null;
@@ -46,6 +47,8 @@ public class BuildingTask : MonoBehaviour, IWorkable
             }
             else
             {
+                QuestEvents.current.QuestEvent(questCode);
+
                 // FIX THIS YOU FUCKER ITS AWFULL
                 if (tower != null)
                     tower.ActivateTower();

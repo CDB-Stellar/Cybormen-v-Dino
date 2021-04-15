@@ -14,12 +14,27 @@ public class QuestUIController : MonoBehaviour
     public Button claimRewardButton; //replaces the completeness counter
     public GameObject questInfoPanel; //turn it off or on if you have a quest or not
     public TextMeshProUGUI noQuest; //tells user no quest active
+    public Quest currentQuest;
 
     private void Awake()
+    {
+        QuestEvents.current.OnQuestUpdate += UpdateQuest;
+        QuestEvents.current.OnQuestComplete += QuestComplete;
+    }
+    private void Start()
     {
         // Make sure the right thing is enabled at the start
         completeness.enabled = true;
         claimRewardButton.enabled = false;
+        Debug.Log(claimRewardButton.enabled);
+        UpdateQuest();
+    }
+
+    public void UpdateQuest()
+    {
+        QuestData questData = QuestEvents.current.currentQuest.data;
+        UpdateDescription(questData.questDescription);
+        UpdateCompleteness(questData.questCompletion, questData.questAmount);        
     }
 
     // Function to change the quest description text. Can be a sentence or two.

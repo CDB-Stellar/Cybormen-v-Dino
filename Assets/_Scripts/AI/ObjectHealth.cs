@@ -15,6 +15,8 @@ public class ObjectHealth : MonoBehaviour
     public float destroyHeight;
     public int CurrentHealth { get; set; } //change set to public to save village health
 
+    [Header("QuestCode")]
+    public int questCode;
 
     private HealthBar healthBar;    
     private bool isDead;
@@ -70,7 +72,9 @@ public class ObjectHealth : MonoBehaviour
         //Disable all scripts attached to this gameObject other than this one
         MonoBehaviour[] attachedScripts = GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour script in attachedScripts)        
-            if (!script.Equals(this)) script.enabled = false;       
+            if (!script.Equals(this)) script.enabled = false;
+
+        QuestEvents.current.QuestEvent(questCode);
 
         // Diable NavMeshAgent if one Existsp
         NavMeshAgent navAgent;
