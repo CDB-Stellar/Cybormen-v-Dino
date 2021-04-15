@@ -5862,15 +5862,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentQuest: {fileID: 1510065578}
   questPool:
-  - questDescription: Gather 2 Evergreen Trees
+  - questDESC: Destroy a rock
+    questCodes: d3070000
+    questAmount: 1
+    reward:
+      WoodValue: 0
+      StoneValue: 5
+      IronValue: 10
+      ElectronicsValue: 0
+    rewardMsg: 5 Stone, 5 Iron
+  - questDESC: Cut down 2 evergreen trees
     questCodes: d1070000
     questAmount: 2
-    questCompletion: 0
     reward:
       WoodValue: 10
       StoneValue: 0
       IronValue: 0
       ElectronicsValue: 0
+    rewardMsg: 10 Wood
+  - questDESC: Kill 5 Raptors
+    questCodes: e9030000
+    questAmount: 5
+    reward:
+      WoodValue: 10
+      StoneValue: 10
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 10 Wood, 10 Stone
+  - questDESC: Lose a Cyberman
+    questCodes: b90b0000
+    questAmount: 1
+    reward:
+      WoodValue: 50
+      StoneValue: 40
+      IronValue: 30
+      ElectronicsValue: 5
+    rewardMsg: 50 Wood, 40 stone, 30 Iron and 5 electronics
+  - questDESC: 
+    questCodes: 00000000
+    questAmount: 0
+    reward:
+      WoodValue: 0
+      StoneValue: 0
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 
 --- !u!114 &1510065578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5883,16 +5919,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9127c6321d864f43bce11e2426aca11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questCompletion: 0
   data:
-    questDescription: 
+    questDESC: 
     questCodes: 
     questAmount: 0
-    questCompletion: 0
     reward:
       WoodValue: 0
       StoneValue: 0
       IronValue: 0
       ElectronicsValue: 0
+    rewardMsg: 
 --- !u!1001 &1516487091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8530,6 +8567,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &2045454249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453623963356400583, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+  m_PrefabInstance: {fileID: 3697674269998837872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2058422089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,10 +9311,50 @@ PrefabInstance:
     - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1510065573}
+      objectReference: {fileID: 1510065574}
     - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClaimReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 828493516666383562, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: claimRewardButton
+      value: 
+      objectReference: {fileID: 2045454249}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_margin.y
+      value: 30.760704
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5413191738153114593, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_AnchoredPosition.x

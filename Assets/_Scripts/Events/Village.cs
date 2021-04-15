@@ -20,7 +20,6 @@ public class Village : MonoBehaviour
         int count = 0;
         foreach (Transform transform in buildings)
         {
-            Debug.Log(count);
             if (transform == null)
             {
                 count++;

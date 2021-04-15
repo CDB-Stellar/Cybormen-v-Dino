@@ -115,6 +115,7 @@ MonoBehaviour:
   buildTime: 5
   riseRate: 0.1
   building: {fileID: 2199027686915987475}
+  questCode: 4004
 --- !u!114 &4084136845717486936
 MonoBehaviour:
   m_ObjectHideFlags: 0

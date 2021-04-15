@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
+    public int questCompletion;
     public QuestData data;
 
     public void Start()
     {
         QuestEvents.current.OnQuestEvent += CheckQuestEvent;
+        QuestEvents.current.OnClaimReward += ClaimQuestReward;
     }
     private void CheckQuestEvent(int value)
     {
         foreach (int questCode in data.questCodes)
         {
-            //Debug.Log(questCode + ", " + value);
             if (questCode == value)
             {
-                data.questCompletion++;
+                questCompletion++;
                  QuestEvents.current.UpdateQuest();
-                if (data.questCompletion >= data.questAmount)
+                if (questCompletion >= data.questAmount)
                 {
                     QuestEvents.current.CompleteQuest();
                 }
@@ -34,5 +35,6 @@ public class Quest : MonoBehaviour
     private void OnDestroy()
     {
         QuestEvents.current.OnQuestEvent -= CheckQuestEvent;
+        QuestEvents.current.OnClaimReward -= ClaimQuestReward;
     }
 }

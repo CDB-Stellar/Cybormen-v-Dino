@@ -148,6 +148,7 @@ MonoBehaviour:
   GUIOffset: {x: 0, y: 3, z: 0}
   descendRate: 0.15
   destroyHeight: -3
+  questCode: 5002
 --- !u!114 &-3528677761963582434
 MonoBehaviour:
   m_ObjectHideFlags: 0

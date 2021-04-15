@@ -11,11 +11,12 @@ public class QuestEvents : MonoBehaviour
 
     public Action<int> OnQuestEvent;
     public Action OnQuestComplete, OnQuestUpdate, OnClaimReward;
+    public Action OnNewQuest;
 
     private void Awake()
     {
         current = this;
-        GetQuest();
+        GetNewQuest();
     }
     public void QuestEvent(int questValue)
     {
@@ -32,14 +33,17 @@ public class QuestEvents : MonoBehaviour
     }
     public void ClaimReward()
     {
+        GetNewQuest();
         OnClaimReward?.Invoke();
     }
-    private void GetQuest()
+    private void GetNewQuest()
     {
         System.Random random = new System.Random();
 
         int value = random.Next(0, questPool.Count - 1);
-
+        Debug.Log(questPool.Count);
         currentQuest.data = questPool[value];
+        currentQuest.questCompletion = 0;
+        OnNewQuest?.Invoke();
     }
 }

@@ -11,7 +11,7 @@ public class QuestUIController : MonoBehaviour
     public TextMeshProUGUI description; //quest info
     public TextMeshProUGUI reward; //reward amount and item
     public TextMeshProUGUI completeness; //completeness counter
-    public Button claimRewardButton; //replaces the completeness counter
+    public GameObject claimRewardButton; //replaces the completeness counter
     public GameObject questInfoPanel; //turn it off or on if you have a quest or not
     public TextMeshProUGUI noQuest; //tells user no quest active
     public Quest currentQuest;
@@ -20,21 +20,22 @@ public class QuestUIController : MonoBehaviour
     {
         QuestEvents.current.OnQuestUpdate += UpdateQuest;
         QuestEvents.current.OnQuestComplete += QuestComplete;
+        QuestEvents.current.OnNewQuest += CreateQuest;
     }
     private void Start()
     {
         // Make sure the right thing is enabled at the start
         completeness.enabled = true;
-        claimRewardButton.enabled = false;
-        Debug.Log(claimRewardButton.enabled);
+        claimRewardButton.SetActive(false);
         UpdateQuest();
     }
 
     public void UpdateQuest()
     {
-        QuestData questData = QuestEvents.current.currentQuest.data;
-        UpdateDescription(questData.questDescription);
-        UpdateCompleteness(questData.questCompletion, questData.questAmount);        
+        Quest quest = QuestEvents.current.currentQuest;
+        UpdateDescription(quest.data.questDESC);
+        UpdateCompleteness(quest.questCompletion, quest.data.questAmount);
+        UpdateReward(quest.data.rewardMsg);
     }
 
     // Function to change the quest description text. Can be a sentence or two.
@@ -44,9 +45,9 @@ public class QuestUIController : MonoBehaviour
     }
 
     // Function to change the reward text. Ex. (5, wood)
-    public void UpdateReward(int rewardAmount, string rewardItem)
+    public void UpdateReward(string rewardMessage)
     {
-        reward.text = "Reward: " + rewardAmount + " " + rewardItem;
+        reward.text = "Reward: " + rewardMessage;
     }
 
     // Function to change the fraction representing completeness (x/y)
@@ -59,7 +60,7 @@ public class QuestUIController : MonoBehaviour
     public void QuestComplete()
     {
         completeness.enabled = false;
-        claimRewardButton.enabled = true;
+        claimRewardButton.SetActive(true);
     }
 
     // Deactivates the quest info panel if quest is done
@@ -70,14 +71,12 @@ public class QuestUIController : MonoBehaviour
     }
 
     // Can use this to create a new quest with everything at once
-    public void CreateQuest(string description, int rewardAmount, string rewardItem, int x, int y)
+    public void CreateQuest()
     {
         noQuest.enabled = false;
         completeness.enabled = true;
-        claimRewardButton.enabled = false;
+        claimRewardButton.SetActive(false);
         questInfoPanel.SetActive(true);
-        UpdateDescription(description);
-        UpdateReward(rewardAmount, rewardItem);
-        UpdateCompleteness(x, y);
+        UpdateQuest();
     }
 }
