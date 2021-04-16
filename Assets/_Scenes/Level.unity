@@ -9503,34 +9503,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1510065574}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1510065574}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GetNewQuest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: QuestEvents, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6132309193252853427, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -9619,10 +9591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestsPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 8031553491862862660, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -46
-      objectReference: {fileID: 0}
+    - target: {fileID: 8051433881599586493, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1510065574}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
 --- !u!224 &7370863791075174083 stripped
