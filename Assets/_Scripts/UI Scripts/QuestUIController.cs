@@ -18,12 +18,14 @@ public class QuestUIController : MonoBehaviour
 
     private void Awake()
     {
-        QuestEvents.current.OnQuestUpdate += UpdateQuest;
-        QuestEvents.current.OnQuestComplete += QuestComplete;
-        QuestEvents.current.OnNewQuest += CreateQuest;
+       
     }
     private void Start()
     {
+        QuestEvents.current.OnQuestUpdate += UpdateQuest;
+        QuestEvents.current.OnQuestComplete += QuestComplete;
+        QuestEvents.current.OnNewQuest += CreateQuest;
+
         // Make sure the right thing is enabled at the start
         completeness.enabled = true;
         claimRewardButton.SetActive(false);

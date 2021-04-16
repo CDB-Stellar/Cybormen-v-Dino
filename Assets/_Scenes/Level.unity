@@ -584,7 +584,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1047393460449585441, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
   m_PrefabInstance: {fileID: 1510065572}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510065573}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a086b1f5feab784449bd8eef8a2df850, type: 3}
@@ -5793,6 +5793,286 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].questDESC
+      value: Build 4 Spear Towers
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].rewardMsg
+      value: 40 Wood, and 10 Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].questDESC
+      value: Build A Factory
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].rewardMsg
+      value: 15 Stone, 20 Iron, and 6 Electronics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].questDESC
+      value: Kill 2 Tyrannosaurus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].rewardMsg
+      value: 10 Stone, 20 Iron, and 10 Electronics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questDESC
+      value: Lose 5 towers
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].rewardMsg
+      value: 50 Wood, 20 Stone, 50 Iron, 25 Electronics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].questDESC
+      value: Lose A Village Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].rewardMsg
+      value: 50 Stone, 100 Iron, and 100 Electronics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].questDESC
+      value: Chop Down 15 Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].rewardMsg
+      value: 150 Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].questDESC
+      value: Build A Rock Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].rewardMsg
+      value: 5 Stone, 15 Iron, 10 Electronics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[11].questDESC
+      value: Dummy Quest, Should Not show up
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].questAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].questAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].questAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].questAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].questAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].questAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].reward.WoodValue
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].reward.IronValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].reward.WoodValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].reward.IronValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].reward.IronValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].reward.WoodValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].reward.IronValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].reward.WoodValue
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].reward.IronValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].reward.StoneValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].reward.StoneValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].reward.StoneValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].reward.StoneValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].reward.StoneValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].reward.StoneValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questCodes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].questCodes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[11].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[12].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[13].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[14].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[15].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[16].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[17].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[18].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[19].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[20].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[21].questCodes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].reward.ElectronicsValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].reward.ElectronicsValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].reward.ElectronicsValue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].reward.ElectronicsValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].reward.ElectronicsValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[4].questCodes.Array.data[0]
+      value: 4001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[5].questCodes.Array.data[0]
+      value: 4004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[6].questCodes.Array.data[0]
+      value: 1003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questCodes.Array.data[0]
+      value: 5001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questCodes.Array.data[1]
+      value: 5002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[7].questCodes.Array.data[2]
+      value: 5003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[8].questCodes.Array.data[0]
+      value: 5005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].questCodes.Array.data[0]
+      value: 2001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[9].questCodes.Array.data[1]
+      value: 2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+      propertyPath: questPool.Array.data[10].questCodes.Array.data[0]
+      value: 4003
+      objectReference: {fileID: 0}
     - target: {fileID: 1047393462272086176, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
       propertyPath: m_Name
       value: GameSystems
@@ -5843,93 +6123,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
---- !u!1 &1510065573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1047393460449585442, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
+--- !u!114 &1510065574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1510065574, guid: c31b98d53f84c4d4cbff71ed723b2315, type: 3}
   m_PrefabInstance: {fileID: 1510065572}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1510065574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510065573}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df6b078b705d094ba23031d69fb7cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentQuest: {fileID: 1510065578}
-  questPool:
-  - questDESC: Destroy a rock
-    questCodes: d3070000
-    questAmount: 1
-    reward:
-      WoodValue: 0
-      StoneValue: 5
-      IronValue: 10
-      ElectronicsValue: 0
-    rewardMsg: 5 Stone, 5 Iron
-  - questDESC: Cut down 2 evergreen trees
-    questCodes: d1070000
-    questAmount: 2
-    reward:
-      WoodValue: 10
-      StoneValue: 0
-      IronValue: 0
-      ElectronicsValue: 0
-    rewardMsg: 10 Wood
-  - questDESC: Kill 5 Raptors
-    questCodes: e9030000
-    questAmount: 5
-    reward:
-      WoodValue: 10
-      StoneValue: 10
-      IronValue: 0
-      ElectronicsValue: 0
-    rewardMsg: 10 Wood, 10 Stone
-  - questDESC: Lose a Cyberman
-    questCodes: b90b0000
-    questAmount: 1
-    reward:
-      WoodValue: 50
-      StoneValue: 40
-      IronValue: 30
-      ElectronicsValue: 5
-    rewardMsg: 50 Wood, 40 stone, 30 Iron and 5 electronics
-  - questDESC: 
-    questCodes: 00000000
-    questAmount: 0
-    reward:
-      WoodValue: 0
-      StoneValue: 0
-      IronValue: 0
-      ElectronicsValue: 0
-    rewardMsg: 
---- !u!114 &1510065578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510065573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9127c6321d864f43bce11e2426aca11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCompletion: 0
-  data:
-    questDESC: 
-    questCodes: 
-    questAmount: 0
-    reward:
-      WoodValue: 0
-      StoneValue: 0
-      IronValue: 0
-      ElectronicsValue: 0
-    rewardMsg: 
 --- !u!1001 &1516487091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8567,11 +8771,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &2045454249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7453623963356400583, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-  m_PrefabInstance: {fileID: 3697674269998837872}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2058422089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9301,68 +9500,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 2021108997}
     m_Modifications:
     - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1510065574}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1510065574}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClaimReward
+      value: GetNewQuest
       objectReference: {fileID: 0}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: QuestEvents, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 242985842038047988, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+    - target: {fileID: 5131602606616907749, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 828493516666383562, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: claimRewardButton
-      value: 
-      objectReference: {fileID: 2045454249}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_fontSize
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_margin.y
-      value: 30.760704
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690272117152701682, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413191738153114593, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -2002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413191738153114593, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 6132309193252853427, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
       propertyPath: m_Pivot.x
@@ -9452,13 +9619,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestsPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7453623963356400583, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378718455175522057, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 8031553491862862660, guid: 53d8327c4811db343b1d72de01660c75, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53d8327c4811db343b1d72de01660c75, type: 3}

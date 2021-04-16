@@ -198,7 +198,7 @@ MonoBehaviour:
   towerType: 2
   projectilePrefab: {fileID: 5696543047930601493, guid: 18b18e04e4731d74ab4c134ee95becf5, type: 3}
   shootFrom: {fileID: 2119509947}
-  fireRate: 3
+  fireRate: 1.2
   moveSpeed: 30
   rotationBit: {fileID: 3537463977953967102}
   targetPriority:

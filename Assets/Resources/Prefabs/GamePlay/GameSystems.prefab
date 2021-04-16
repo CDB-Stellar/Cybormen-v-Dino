@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1047393460449585441}
   - component: {fileID: 1047393460449585443}
   - component: {fileID: 1510065578}
+  - component: {fileID: 1510065574}
+  - component: {fileID: 5341348437481365294}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -74,6 +76,88 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   cameraName: Camera
+--- !u!114 &1510065574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047393460449585442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df6b078b705d094ba23031d69fb7cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentQuest: {fileID: 5341348437481365294}
+  questPool:
+  - questDESC: Destroy a rock
+    questCodes: d3070000
+    questAmount: 1
+    reward:
+      WoodValue: 0
+      StoneValue: 5
+      IronValue: 10
+      ElectronicsValue: 0
+    rewardMsg: 5 Stone, 5 Iron
+  - questDESC: Cut down 2 evergreen trees
+    questCodes: d1070000
+    questAmount: 2
+    reward:
+      WoodValue: 10
+      StoneValue: 0
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 10 Wood
+  - questDESC: Kill 5 Raptors
+    questCodes: e9030000
+    questAmount: 5
+    reward:
+      WoodValue: 10
+      StoneValue: 10
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 10 Wood, 10 Stone
+  - questDESC: Lose a Cyberman
+    questCodes: b90b0000
+    questAmount: 1
+    reward:
+      WoodValue: 50
+      StoneValue: 40
+      IronValue: 30
+      ElectronicsValue: 5
+    rewardMsg: 50 Wood, 40 stone, 30 Iron and 5 electronics
+  - questDESC: 
+    questCodes: 00000000
+    questAmount: 0
+    reward:
+      WoodValue: 0
+      StoneValue: 0
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 
+--- !u!114 &5341348437481365294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047393460449585442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9127c6321d864f43bce11e2426aca11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questCompletion: 0
+  data:
+    questDESC: 
+    questCodes: 
+    questAmount: 0
+    reward:
+      WoodValue: 0
+      StoneValue: 0
+      IronValue: 0
+      ElectronicsValue: 0
+    rewardMsg: 
 --- !u!1 &1047393461409956168
 GameObject:
   m_ObjectHideFlags: 0

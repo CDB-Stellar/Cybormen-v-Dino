@@ -36,7 +36,7 @@ public class QuestEvents : MonoBehaviour
         GetNewQuest();
         OnClaimReward?.Invoke();
     }
-    private void GetNewQuest()
+    public void GetNewQuest()
     {
         System.Random random = new System.Random();
 
